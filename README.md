@@ -1,154 +1,174 @@
 # Allen Digital Extractor 🧪
 
-A Python pipeline that talks directly to Allen's internal `getPage` API to rip the entire JEE curriculum — every lecture, every PDF, every flashcard deck — and flatten it into one structured JSON file.
+A precision data-ingestion pipeline that communicates directly with Allen's internal `getPage` API to extract, structure, and serialize the complete JEE Advanced curriculum into a single, machine-readable JSON file.
 
-No browser automation. No Selenium. No clicking through hundreds of pages. Just raw HTTP → structured data.
-
----
-
-## What this actually is
-
-This isn't a generic web scraper. It's the **data ingestion layer** for a custom AI + ML engineering curriculum I'm building.
-
-The idea: digitize Allen's complete Class 11 & 12 syllabus into a machine-readable format, then feed it into an LLM-powered scheduler that generates a real, day-by-day study plan — weighted by topic difficulty, video duration, and exam relevance.
-
-**The tactical deadline:** finish extracting and completing all pending Class 12 coursework (and any remaining Class 11 backlog) by November. December is reserved purely for full-length mock tests and problem-solving. The AI scheduler can't optimize a plan it can't see, so step one is getting the raw data out.
+No browser automation. No Selenium. No Playwright. Just authenticated HTTP requests hitting the same endpoints the webapp uses internally — except instead of rendering React components, we parse the raw payload and keep moving.
 
 ---
 
-## How it works
+## Why this exists
 
-The script runs a **two-phase recursive loop** against Allen's `getPage` API:
+Allen's platform is designed for one thing: watching one video at a time inside their app. It's not designed for answering questions like:
+
+- *"Across all 3 subjects, how many hours of lecture content do I have left?"*
+- *"Which chapters have exercises uploaded but no study modules?"*
+- *"If I have 200 days until my exam, how many minutes of content do I need to cover per day, accounting for my gym schedule and weekends?"*
+
+You can't answer those questions by clicking around a webapp. You answer them by **extracting the entire dataset, structuring it, and feeding it to a system that can reason over it.**
+
+That system is an LLM. This repo is the data layer that makes it possible.
+
+---
+
+## Architecture: The Two-Phase Extraction Loop
+
+The script (`allen_data_rip.py`) executes a recursive two-phase loop against Allen's `getPage` API:
 
 ```
 Phase 1 — /subject-details
-   For each subject_id (Physics=1160, Maths=1264),
-   hit the subject-level endpoint and scrape the full chapter list.
-   Extract every topic_id from the response.
+   For each subject_id in [1160, 746, 1264] (Physics, Chemistry, Maths):
+     → Hit the subject-level endpoint
+     → Parse the chapter list from the response widgets
+     → Extract every topic_id
 
 Phase 2 — /topic-details
-   For each discovered topic_id, hit the topic-level endpoint.
-   Parse out:
-     → Concept video metadata (title, duration, sub-topics, sequence)
-     → RACE & Exercise PDFs (direct CloudFront URLs)
-     → Study Module PDFs
-     → Flashcard deck metadata
-     → Revision notes
-     → Custom practice quiz configs
+   For each discovered topic_id:
+     → Hit the topic-level endpoint
+     → Extract structured content:
+         • Concept videos (title, duration, sub-topics, sequence order)
+         • RACE & Exercise PDFs (direct signed CloudFront URLs)
+         • Study Module PDFs
+         • Flashcard deck metadata
+         • Revision notes URIs
+         • Custom practice quiz configurations
+     → Merge into the knowledge base
+     → Checkpoint progress
+     → Sleep 1.5s before the next request
 ```
-
-`time.sleep(1.5)` sits between every request so we don't hammer the API.
 
 ### Resume support
 
-Progress checkpoints to `rip_progress.json`. If the script crashes, your Wi-Fi drops, or you `Ctrl+C` — it resumes exactly where it left off. No duplicate API calls, no lost data.
+Every completed topic is checkpointed to `rip_progress.json`. Kill the process, lose internet, reboot your machine — the script resumes exactly where it left off. Zero duplicate API calls.
 
 ### Non-destructive merge
 
-New data gets merged into `allen_complete_knowledge_base.json` without overwriting anything already in there. You can run the script multiple times (adding subjects, re-running after a token refresh) and existing entries stay untouched.
+New data is merged into `allen_complete_knowledge_base.json` without overwriting existing entries. The Class 11 data from earlier extraction runs is preserved. You can re-run the script after a token refresh or after adding new subject IDs, and nothing gets clobbered.
+
+---
+
+## Current extraction status
+
+| Scope | Subjects | Status |
+|-------|----------|--------|
+| **Class 11** | Physics, Chemistry, Mathematics | ✅ Fully extracted |
+| **Class 12** | Physics (`1160`) | ✅ Extracted |
+| **Class 12** | Chemistry (`746`) | ✅ Extracted |
+| **Class 12** | Mathematics (`1264`) | ✅ Extracted |
+
+### Aggregate stats
+
+- **~1,600+ concept videos** indexed with per-lecture durations and sub-topic breakdowns
+- **~430+ PDFs** catalogued (RACE sheets, exercise solutions, study modules)
+- **Full PCM coverage** across both Class 11 and Class 12
+
+---
+
+## The Ultimate Goal: RAG-Powered Study Intelligence
+
+This repository is **Phase 1: Data Ingestion** of a larger system.
+
+### Phase 1 — Data Ingestion (this repo)
+
+Extract Allen's entire curriculum into `allen_complete_knowledge_base.json` — a structured, hierarchical dataset containing every video, every PDF, every topic dependency, and every duration metric across all subjects and classes.
+
+### Phase 2 — LLM-as-Reasoning-Engine (RAG Architecture)
+
+The JSON file produced by Phase 1 becomes the **context window payload** for a frontier LLM — Claude 3 Opus, Gemini 1.5 Pro, or equivalent. The full knowledge base (~1MB of structured JSON) fits comfortably within modern context windows (200K+ tokens), enabling the model to reason over the *entire* curriculum simultaneously.
+
+This is not a simple chatbot integration. It's a **Retrieval-Augmented Generation architecture** where the retrieval layer is the complete, pre-extracted curriculum graph, and the generation layer is a frontier model operating with full visibility into:
+
+- Every chapter across all 6 subject-class combinations
+- Total video hours remaining per subject
+- Which topics have supplementary materials vs. video-only coverage
+- The sequential dependency ordering within each chapter
+
+### Phase 3 — The AI Study Coach
+
+With the full curriculum loaded as context, the LLM acts as a **dynamic, context-aware study planner**. Concretely, it can:
+
+- **Generate daily study schedules** — not generic templates, but plans derived from the actual video durations and topic counts in the dataset
+- **Calculate required daily throughput** — "You have 847 hours of content remaining. At 4.5 hours/day with weekends off, you need to start by [date] to finish by November 1st."
+- **Track completion state** — mark topics as done, recalculate the remaining workload, and dynamically rebalance the schedule
+- **Adapt to fixed constraints** — account for gym sessions, school hours, energy levels (heavier subjects in the morning, lighter review in the evening)
+- **Prioritize by exam weightage** — surface high-yield chapters first based on JEE Advanced topic distribution patterns
+- **Flag gaps** — identify chapters where you have videos but haven't downloaded the exercise PDFs, or topics with no flashcard coverage
+
+The hard deadline: **all coursework complete by November 1st.** December is reserved exclusively for full-length mock tests and targeted problem-solving. The AI scheduler's job is to make that timeline mathematically achievable and dynamically adjust when life inevitably disrupts the plan.
 
 ---
 
 ## Setup
 
-1. **Install the one dependency:**
+1. **Install dependencies:**
    ```bash
    pip install requests
    ```
 
-2. **Create `allen_token.txt`** in the project root. Paste your Bearer token inside (just the token string, no `Bearer` prefix).
+2. **Create `allen_token.txt`** in the project root with your Bearer token inside (just the token, no `Bearer` prefix).
 
-   Grab it from DevTools → Network tab → any `getPage` request → `Authorization` header.
+   Grab it: DevTools → Network → any `getPage` call → `Authorization` header → copy the token after `Bearer `.
 
-   > ⚠️ **This file is gitignored.** Don't commit it. Tokens expire — if you start getting 401s, grab a fresh one.
+   > ⚠️ Gitignored. Never committed. Tokens expire — refresh from the browser when you hit 401s.
 
-3. **Run it:**
+3. **Run the extractor:**
    ```bash
    python allen_data_rip.py
    ```
 
-   That's it. Sit back and watch it chew through every chapter.
-
 ---
 
-## Current subject config
+## Subject configuration
 
 ```python
 SUBJECT_IDS = [
     ("Physics", "1160"),
+    ("Chemistry", "746"),
     ("Maths", "1264"),
 ]
 ```
 
-Chemistry and Class 11 data already lives in the knowledge base from earlier runs. These two IDs cover the remaining Class 12 Physics and Maths chapters.
-
-To add more subjects later, intercept the `/subject-details` network request in DevTools and grab the `subject_id` from the request body.
+To add more subjects: open Allen in the browser → navigate to the subject → DevTools Network tab → find the `getPage` request → copy the `subject_id` from the request body.
 
 ---
 
-## Output files
+## Output
 
-| File | What it is |
-|------|-----------|
-| `allen_complete_knowledge_base.json` | The whole curriculum — every topic, video, PDF link, organized by subject → chapter |
-| `rip_progress.json` | Checkpoint state for resume support |
-| `allen_token.txt` | Your auth token (gitignored, never committed) |
-
-### JSON shape
-
-```json
-{
-  "metadata": {
-    "source": "Allen Digital (allen.in)",
-    "stream": "STREAM_JEE_MAIN_ADVANCED",
-    "last_updated": "2026-04-13T..."
-  },
-  "Physics": {
-    "total_topics": 22,
-    "topics": {
-      "Mechanics": {
-        "concept_videos": { "count": 30, "total_duration_minutes": 720.0, "lectures": [...] },
-        "additional_materials": { "groups": [...] },
-        "study_modules": { "modules": [...] },
-        "flashcards": { ... },
-        "revision_notes": { ... }
-      }
-    }
-  }
-}
-```
+| File | Purpose |
+|------|---------|
+| `allen_complete_knowledge_base.json` | Complete structured curriculum — the payload for the LLM context window |
+| `rip_progress.json` | Extraction checkpoint state (resume support) |
+| `allen_token.txt` | Auth token (gitignored) |
 
 ---
 
 ## Other scripts
 
-| Script | What it does |
-|--------|-------------|
-| `allen_data_rip.py` | **The main pipeline** — two-phase subject→topic extraction loop |
-| `allen_full_rip.py` | Earlier version with baked-in PDF downloading and Class 11/12 auto-discovery |
-| `api_probe.py` | Diagnostic tool — hits a few endpoints and dumps raw JSON for manual inspection |
-| `generate_roadmap.py` | Takes the knowledge base and feeds it to an LLM for study schedule generation |
+| Script | Purpose |
+|--------|---------|
+| `allen_data_rip.py` | Main pipeline — two-phase subject→topic extraction loop |
+| `allen_full_rip.py` | Earlier version with integrated PDF downloading and Class 11/12 auto-discovery |
+| `api_probe.py` | Diagnostic — hits endpoints and dumps raw JSON for manual inspection |
+| `generate_roadmap.py` | Feeds the knowledge base to an LLM to generate study schedules |
 
 ---
 
-## Stats from previous runs
+## ⚠️ Operational notes
 
-- **~1,600+ concept videos** indexed with durations and sub-topic breakdowns
-- **~430+ PDFs** catalogued (RACE sheets, exercises, study modules)
-- **All Class 11 PCM** already in the knowledge base
-- **Class 12 Physics + Maths** being added with this run
-
----
-
-## ⚠️ Ground rules
-
-- **Don't share your token.** It's tied to your Allen account.
-- **Don't distribute the PDFs or video URLs.** Copyrighted material. Everything stays local.
-- **Tokens expire.** Refresh from the browser when needed.
-
-This is a personal data pipeline for study optimization, not a redistribution tool.
+- **Tokens are account-bound.** Don't share `allen_token.txt`.
+- **Content is copyrighted.** PDFs and video URLs stay local. This is a personal optimization tool, not a distribution mechanism.
+- **Rate limiting is built in.** 1.5s between requests. Don't remove it.
+- **Token expiry.** If the script starts returning 401s or non-200 statuses, grab a fresh token from the browser.
 
 ---
 
-*Built because I got tired of the Allen app's walled garden.  
-The dataset this produces is step one of a bigger play: an ML-powered curriculum planner that actually understands topic dependencies, time budgets, and exam weightage — and builds a schedule that gets everything done by November so December is pure problem-solving mode.* 🎯
+*This is infrastructure, not a toy. The JSON file this script produces is the foundation for a system that turns a massive, unstructured ed-tech platform into a programmable, AI-optimized learning pipeline — one that adapts to my schedule, respects my constraints, and keeps me accountable to a hard November 1st deadline.* 🎯

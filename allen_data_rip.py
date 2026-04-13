@@ -81,8 +81,10 @@ HEADERS = {
 # ── Subject definitions ──
 # Each entry: (label, subject_id)
 # Confirmed IDs from intercepted /subject-details cURLs.
+# Covers all three Class 12 subjects: Physics, Chemistry, Maths.
 SUBJECT_IDS = [
     ("Physics", "1160"),
+    ("Chemistry", "746"),
     ("Maths", "1264"),
 ]
 
