@@ -83,7 +83,7 @@ Extract Allen's entire curriculum into `allen_complete_knowledge_base.json` — 
 
 ### Phase 2 — LLM-as-Reasoning-Engine (RAG Architecture)
 
-The JSON file produced by Phase 1 becomes the **context window payload** for a frontier LLM — Claude 3 Opus, Gemini 1.5 Pro, or equivalent. The full knowledge base (~1MB of structured JSON) fits comfortably within modern context windows (200K+ tokens), enabling the model to reason over the *entire* curriculum simultaneously.
+The JSON file produced by Phase 1 becomes the **context window payload** for a frontier LLM. The full knowledge base (~1MB of structured JSON) fits comfortably within modern context windows (200K+ tokens), enabling the model to reason over the *entire* curriculum simultaneously.
 
 This is not a simple chatbot integration. It's a **Retrieval-Augmented Generation architecture** where the retrieval layer is the complete, pre-extracted curriculum graph, and the generation layer is a frontier model operating with full visibility into:
 
@@ -103,8 +103,7 @@ With the full curriculum loaded as context, the LLM acts as a **dynamic, context
 - **Prioritize by exam weightage** — surface high-yield chapters first based on JEE Advanced topic distribution patterns
 - **Flag gaps** — identify chapters where you have videos but haven't downloaded the exercise PDFs, or topics with no flashcard coverage
 
-The hard deadline: **all coursework complete by November 1st.** December is reserved exclusively for full-length mock tests and targeted problem-solving. The AI scheduler's job is to make that timeline mathematically achievable and dynamically adjust when life inevitably disrupts the plan.
-
+The end result is a study pipeline that's aware of the full curriculum graph and can reason about it — not just a to-do list, but an adaptive system that recalculates in real time.
 ---
 
 ## Setup
