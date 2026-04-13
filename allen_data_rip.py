@@ -1,16 +1,19 @@
 """
-Allen Data Ripper v2.0
-======================
-Replicates the intercepted getPage API call for the Allen curriculum,
-parses the JSON response, and extracts:
-  - Chapter / Topic Names (from breadcrumbs & header)
-  - Concept Video Lectures (titles, durations, descriptions, sub-topics, HLS URLs)
-  - Additional Materials (RACE PDFs, Exercise Solutions PDFs)
-  - Study Module PDFs
-  - Flashcard & Revision Notes metadata
-  - Custom Practice quiz configuration
+Allen Data Ripper v3.0 — Universal Two-Phase Extractor
+=======================================================
+Hits the Allen getPage API in two passes:
 
-Output: final_syllabus.json  --  a beautiful, hierarchical JSON file.
+  Phase 1 (/subject-details)
+      For each subject_id in SUBJECT_IDS, fetch the full chapter list
+      and extract every topic_id.
+
+  Phase 2 (/topic-details)
+      For every discovered topic_id, pull concept-video metadata,
+      lecture durations, PDF links, flashcards, revision notes, and
+      custom-practice configs.
+
+All data is appended into allen_complete_knowledge_base.json without
+destroying existing entries that already live there.
 
 Usage:
     python allen_data_rip.py
@@ -18,9 +21,15 @@ Usage:
 
 import json
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import quote, unquote
+
+# Fix Windows console encoding for emoji / unicode
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 import requests
 
@@ -30,16 +39,24 @@ import requests
 # ──────────────────────────────────────────────
 
 API_URL = "https://api.allen-live.in/api/v1/pages/getPage"
-OUTPUT_FILE = "final_syllabus.json"
-RAW_RESPONSE_FILE = "raw_api_response.json"
+OUTPUT_FILE = "allen_complete_knowledge_base.json"
+PROGRESS_FILE = "rip_progress.json"
+REQUEST_DELAY = 1.5  # seconds between requests
 
-# Read token from secure file
+# Read token from secure file (never hardcoded)
 try:
     with open("allen_token.txt", "r") as f:
         auth_token = f.read().strip()
 except FileNotFoundError:
-    print("CRITICAL ERROR: 'allen_token.txt' not found. Please create it and paste your Bearer token inside.")
+    print("FATAL: 'allen_token.txt' not found.")
+    print("       Create the file and paste your Bearer token inside.")
     sys.exit(1)
+
+# ── Shared request plumbing ──
+BATCH_IDS = "bt_dGHnem4IjNtEOVQjfmW26,bt_Ez5lOBgnoJadUVdL7IaXM,bt_Lk86uKMqqav23yczHJHJh"
+COURSE_ID = "cr_cpTLbkqWLu96FPkmfoREz"
+STREAM = "STREAM_JEE_MAIN_ADVANCED"
+TAXONOMY_ID = "1739171216OJ"
 
 HEADERS = {
     "accept": "application/json",
@@ -56,116 +73,210 @@ HEADERS = {
     "x-client-type": "web",
     "x-device-id": "1d37c8b0-df6b-4843-9f2a-a708c6cb160f",
     "x-locale": "en",
-    "x-selected-batch-list": (
-        "bt_dGHnem4IjNtEOVQjfmW26,"
-        "bt_Ez5lOBgnoJadUVdL7IaXM,"
-        "bt_Lk86uKMqqav23yczHJHJh"
-    ),
-    "x-selected-course-id": "cr_cpTLbkqWLu96FPkmfoREz",
+    "x-selected-batch-list": BATCH_IDS,
+    "x-selected-course-id": COURSE_ID,
     "x-visitor-id": "d5f1d6c0-ebf5-40e7-8448-f103cba77f6a",
 }
 
-PAYLOAD = {
-    "page_url": (
-        "/topic-details?"
-        "batch_id=bt_dGHnem4IjNtEOVQjfmW26%2Cbt_Ez5lOBgnoJadUVdL7IaXM%2Cbt_Lk86uKMqqav23yczHJHJh"
-        "&class_12_subject_id=746"
-        "&class_12_taxonomy_id=1739171216OJ"
-        "&revision_class=CLASS_11"
-        "&selected_batch_list=bt_dGHnem4IjNtEOVQjfmW26%2Cbt_Ez5lOBgnoJadUVdL7IaXM%2Cbt_Lk86uKMqqav23yczHJHJh"
-        "&selected_course_id=cr_cpTLbkqWLu96FPkmfoREz"
-        "&stream=STREAM_JEE_MAIN_ADVANCED"
-        "&subject_id=2"
-        "&taxonomy_id=1739171216OJ"
-        "&topic_id=89"
-    )
-}
+# ── Subject definitions ──
+# Each entry: (label, subject_id)
+# Confirmed IDs from intercepted /subject-details cURLs.
+SUBJECT_IDS = [
+    ("Physics", "1160"),
+    ("Maths", "1264"),
+]
 
 
 # ──────────────────────────────────────────────
-# API call
+# Low-level helpers
 # ──────────────────────────────────────────────
 
-def fetch_page_data() -> dict:
-    """Make the getPage API call and return the parsed JSON response."""
-    print("[*] Calling Allen getPage API...")
-    print(f"    URL: {API_URL}")
-
-    try:
-        resp = requests.post(API_URL, headers=HEADERS, json=PAYLOAD, timeout=30)
-        resp.raise_for_status()
-    except requests.exceptions.HTTPError as e:
-        print(f"[!] HTTP Error: {e}")
-        print(f"    Status: {resp.status_code}")
-        print(f"    Body:   {resp.text[:500]}")
-        sys.exit(1)
-    except requests.exceptions.RequestException as e:
-        print(f"[!] Request failed: {e}")
-        sys.exit(1)
-
-    data = resp.json()
-    print(f"[+] Response received ({len(resp.content):,} bytes)")
-
-    Path(RAW_RESPONSE_FILE).write_text(
-        json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
-    print(f"[+] Raw response saved to {RAW_RESPONSE_FILE}")
-    return data
+def _build_qs(params: dict) -> str:
+    """Encode a dict into a URL query string."""
+    return "&".join(f"{k}={quote(str(v), safe='')}" for k, v in params.items())
 
 
-# ──────────────────────────────────────────────
-# Extraction helpers
-# ──────────────────────────────────────────────
+def api_call(page_url: str, retries: int = 3) -> dict:
+    """POST to getPage with automatic retries."""
+    for attempt in range(1, retries + 1):
+        try:
+            resp = requests.post(
+                API_URL,
+                headers=HEADERS,
+                json={"page_url": page_url},
+                timeout=30,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            if data.get("status") == 200:
+                return data
+            print(f"    ⚠️  API status {data.get('status')}: {data.get('reason')}")
+            if attempt < retries:
+                time.sleep(3)
+        except requests.exceptions.RequestException as e:
+            print(f"    ❌ Request error (attempt {attempt}/{retries}): {e}")
+            if attempt < retries:
+                time.sleep(5)
+    return {}
+
 
 def get_widgets_by_type(data: dict) -> dict:
-    """
-    Index page_content.widgets by their type.
-    Returns {type_string: [widget, ...]} for easy lookup.
-    """
+    """Index page_content.widgets by their widget type."""
     widgets = data.get("data", {}).get("page_content", {}).get("widgets", [])
-    index = {}
+    index: dict = {}
     for w in widgets:
-        wtype = w.get("type", "UNKNOWN")
-        index.setdefault(wtype, []).append(w)
+        index.setdefault(w.get("type", "UNKNOWN"), []).append(w)
     return index
 
 
-def extract_breadcrumbs(widget: dict) -> list[dict]:
-    """Extract the breadcrumb trail from a BREADCRUMBS widget."""
-    crumbs = widget.get("data", {}).get("breadcrumbs", [])
-    return [
-        {
-            "id": bc.get("id"),
-            "label": bc.get("label", ""),
-            "is_active": bc.get("isActive", False),
-            "uri": (bc.get("action") or {}).get("data", {}).get("uri", ""),
+def throttle():
+    """Be nice to the API."""
+    time.sleep(REQUEST_DELAY)
+
+
+# ──────────────────────────────────────────────
+# Progress (resume support)
+# ──────────────────────────────────────────────
+
+class Progress:
+    """Simple checkpoint file so you can kill & restart safely."""
+
+    def __init__(self):
+        self.path = Path(PROGRESS_FILE)
+        self.completed: set = set()
+        self._load()
+
+    def _load(self):
+        if self.path.exists():
+            try:
+                data = json.loads(self.path.read_text(encoding="utf-8"))
+                self.completed = set(data.get("completed", []))
+                print(f"   📂 Resumed — {len(self.completed)} topics already done")
+            except Exception:
+                pass
+
+    def mark_done(self, key: str):
+        self.completed.add(key)
+        self._save()
+
+    def is_done(self, key: str) -> bool:
+        return key in self.completed
+
+    def _save(self):
+        payload = {
+            "completed": sorted(self.completed),
+            "last_updated": datetime.now().isoformat(),
         }
-        for bc in crumbs
-    ]
+        self.path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
-def extract_header(widget: dict) -> dict:
-    """Extract topic header metadata from APP_GENERIC_HEADER_V2."""
-    wd = widget.get("data", {})
-    subtitles = wd.get("subtitles", [])
-    return {
-        "title": wd.get("title", ""),
-        "subtitles": [s.get("text", "") for s in subtitles],
-        "background_image": (wd.get("background_image") or {}).get("url", ""),
+# ──────────────────────────────────────────────
+# Phase 1:  /subject-details  →  discover topics
+# ──────────────────────────────────────────────
+
+def build_subject_url(subject_id: str) -> str:
+    """Build the page_url for /subject-details."""
+    params = {
+        "batch_id": BATCH_IDS,
+        "selected_batch_list": BATCH_IDS,
+        "selected_course_id": COURSE_ID,
+        "stream": STREAM,
+        "subject_id": subject_id,
+        "taxonomy_id": TAXONOMY_ID,
     }
+    return "/subject-details?" + _build_qs(params)
 
 
-def extract_concept_videos(widget: dict) -> dict:
+def extract_topics_from_subject(data: dict) -> list[dict]:
     """
-    Extract all concept video lectures from a POLYMORPHIC_WIDGET
-    with translation_key = LIBRARY_VIDEOS_WEB.
-
-    Each video item has:
-      content_title, duration, description, sub_topics, sequence,
-      is_locked, type, and content_action.data with video URI.
+    Parse the /subject-details response and return a list of topic dicts:
+        [{"name": "...", "topic_id": "...", "query_params": {...}}, ...]
     """
+    widgets = get_widgets_by_type(data)
+    topics: list[dict] = []
+    seen: set = set()
+
+    for w in widgets.get("POLYMORPHIC_WIDGET", []):
+        inner = w.get("data", {}).get("data", {})
+        chapters = inner.get("chapters_list", {}).get("chapters", [])
+
+        for ch in chapters:
+            name = ch.get("name", "Unknown")
+            if name in seen:
+                continue
+            seen.add(name)
+
+            action_data = (ch.get("action") or {}).get("data", {})
+            query = action_data.get("query", {})
+            tracking = (
+                (ch.get("action") or {})
+                .get("tracking_params", {})
+                .get("current", {})
+            )
+
+            topics.append({
+                "name": name,
+                "topic_id": query.get("topic_id", tracking.get("topic_id", "")),
+                "subject_id": query.get("subject_id", ""),
+                "query_params": query,
+            })
+
+    return topics
+
+
+def run_phase_1() -> dict:
+    """
+    Hit /subject-details for every subject and collect topics.
+    Returns: {"Chemistry": [topic_dict, ...], ...}
+    """
+    print("\n" + "=" * 60)
+    print("  PHASE 1 — Discovering topics via /subject-details")
+    print("=" * 60)
+
+    discovered: dict = {}
+
+    for label, subject_id in SUBJECT_IDS:
+        if subject_id.startswith("<"):
+            print(f"\n  ⏭️  {label}: skipped (placeholder ID)")
+            continue
+
+        print(f"\n  📡 Fetching {label} (subject_id={subject_id}) ...")
+        url = build_subject_url(subject_id)
+        data = api_call(url)
+
+        if not data:
+            print(f"    ❌ Failed to fetch {label}. Skipping.")
+            throttle()
+            continue
+
+        topics = extract_topics_from_subject(data)
+        discovered[label] = topics
+        print(f"    ✅ {label}: {len(topics)} topics found")
+        for t in topics:
+            print(f"       • {t['name']}  (topic_id={t['topic_id']})")
+
+        throttle()
+
+    total = sum(len(v) for v in discovered.values())
+    print(f"\n  {'─' * 50}")
+    print(f"  📊 Total topics discovered: {total}")
+    print(f"  {'─' * 50}")
+    return discovered
+
+
+# ──────────────────────────────────────────────
+# Phase 2:  /topic-details  →  extract content
+# ──────────────────────────────────────────────
+
+def build_topic_url(query_params: dict) -> str:
+    """Build the page_url for /topic-details."""
+    return "/topic-details?" + _build_qs(query_params)
+
+
+# ── Individual widget extractors ──
+
+def _extract_videos(widget: dict) -> dict:
     inner = widget.get("data", {}).get("data", {})
-    section_title = inner.get("title", "Concept Videos")
     contents = inner.get("contents_list", [])
 
     lectures = []
@@ -178,123 +289,93 @@ def extract_concept_videos(widget: dict) -> dict:
             "sub_topics": item.get("sub_topics", []),
             "is_locked": item.get("is_locked", False),
             "content_type": item.get("type", ""),
-            "thumbnail": (item.get("image_data") or {}).get("url", ""),
-            "is_new": bool(item.get("new")),
         }
-
-        # Extract video playback URL from content_action
         action_data = (item.get("content_action") or {}).get("data", {})
         if action_data:
             lecture["content_id"] = action_data.get("content_id", "")
-            lecture["video_url"] = action_data.get("uri", "")
-            lecture["batch_id"] = action_data.get("batch_id", "")
-
-            # Extract watch progress if available
-            progress = action_data.get("progress_info")
-            if progress:
-                lecture["progress"] = {
-                    "completion": round(progress.get("completion_factor", 0) * 100, 2),
-                    "elapsed_seconds": progress.get("elapsed_duration", 0),
-                    "total_seconds": progress.get("total_duration", 0),
-                }
-
         lectures.append(lecture)
 
-    # Sort by sequence
     lectures.sort(key=lambda x: x.get("sequence", 0))
 
+    # Total duration in minutes
+    total_minutes = 0.0
+    for lec in lectures:
+        dur = lec.get("duration", "")
+        if ":" in dur:
+            parts = dur.split(":")
+            if len(parts) == 2:
+                total_minutes += int(parts[0]) + int(parts[1]) / 60
+            elif len(parts) == 3:
+                total_minutes += int(parts[0]) * 60 + int(parts[1]) + int(parts[2]) / 60
+
     return {
-        "section_title": section_title,
-        "total_count": len(lectures),
+        "section_title": inner.get("title", "Concept Videos"),
+        "count": len(lectures),
+        "total_duration_minutes": round(total_minutes, 1),
         "lectures": lectures,
     }
 
 
-def extract_additional_materials(widget: dict) -> dict:
-    """
-    Extract Additional Materials from a POLYMORPHIC_WIDGET
-    with translation_key = LIBRARY_ADDITIONAL_MATERIAL_WEB.
-
-    Each card (e.g. 'RACE & Solutions', 'Exercises & Solutions') contains
-    a nested contents_list with PDF links.
-    """
+def _extract_materials(widget: dict) -> dict:
     inner = widget.get("data", {}).get("data", {})
-    section_title = inner.get("title", "Additional Materials")
     cards = inner.get("cards", [])
 
-    material_groups = []
+    groups = []
     for card in cards:
         group = {
             "title": card.get("card_title", "Untitled"),
             "subtitle": card.get("subtitle", ""),
-            "is_new": bool(card.get("new")),
             "materials": [],
         }
+        popup = card.get("card_action", {}).get("data", {})
+        contents = popup.get("content", {}).get("data", {}).get("contents_list", [])
 
-        # Navigate: card_action -> data -> content -> data -> contents_list
-        card_action = card.get("card_action", {})
-        popup_data = card_action.get("data", {})
-        content_widget = popup_data.get("content", {})
-        content_data = content_widget.get("data", {})
-        contents_list = content_data.get("contents_list", [])
-
-        for item in contents_list:
-            material = {
+        for item in contents:
+            mat = {
                 "title": item.get("content_title", "Untitled"),
                 "description": item.get("description", ""),
                 "content_type": item.get("type", ""),
                 "is_locked": item.get("is_locked", False),
             }
-
             action_data = (item.get("content_action") or {}).get("data", {})
             if action_data:
-                material["content_id"] = action_data.get("content_id", "")
-                material["pdf_url"] = action_data.get("uri", "")
-                material["action_type"] = (item.get("content_action") or {}).get("type", "")
+                mat["content_id"] = action_data.get("content_id", "")
+                mat["pdf_url"] = action_data.get("uri", "")
+            group["materials"].append(mat)
 
-            group["materials"].append(material)
-
-        material_groups.append(group)
+        groups.append(group)
 
     return {
-        "section_title": section_title,
-        "groups": material_groups,
+        "section_title": inner.get("title", "Additional Materials"),
+        "groups": groups,
     }
 
 
-def extract_study_modules(widget: dict) -> dict:
-    """
-    Extract Study Modules from a POLYMORPHIC_WIDGET
-    with translation_key = LIBRARY_STUDY_MODULES_WEB.
-    """
+def _extract_study_modules(widget: dict) -> dict:
     inner = widget.get("data", {}).get("data", {})
-    section_title = inner.get("title", "Study Modules")
     contents = inner.get("contents_list", [])
 
     modules = []
     for item in contents:
-        module = {
+        mod = {
             "title": item.get("content_title", "Untitled"),
             "description": item.get("description", ""),
             "content_type": item.get("type", ""),
             "is_locked": item.get("is_locked", False),
         }
-
         action_data = (item.get("content_action") or {}).get("data", {})
         if action_data:
-            module["content_id"] = action_data.get("content_id", "")
-            module["pdf_url"] = action_data.get("uri", "")
-
-        modules.append(module)
+            mod["content_id"] = action_data.get("content_id", "")
+            mod["pdf_url"] = action_data.get("uri", "")
+        modules.append(mod)
 
     return {
-        "section_title": section_title,
+        "section_title": inner.get("title", "Study Modules"),
         "modules": modules,
     }
 
 
-def extract_flashcards(widget: dict) -> dict:
-    """Extract Flashcards metadata from LIBRARY_FLASHCARDS_CONTAINER_B1_WEB."""
+def _extract_flashcards(widget: dict) -> dict:
     inner = widget.get("data", {}).get("data", {})
     card = inner.get("card", {})
     return {
@@ -302,266 +383,288 @@ def extract_flashcards(widget: dict) -> dict:
         "subtitle": inner.get("sub_title", ""),
         "card_title": card.get("title", ""),
         "card_subtitle": card.get("subtitle", ""),
-        "progress": card.get("progress", ""),
-        "remaining": card.get("number_of_topics_remaining", ""),
-        "image": (inner.get("image_data") or {}).get("url", ""),
-        "uri": ((card.get("cta") or {}).get("action") or {}).get("data", {}).get("uri", ""),
+        "uri": (
+            (card.get("cta") or {}).get("action") or {}
+        ).get("data", {}).get("uri", ""),
     }
 
 
-def extract_revision_notes(widget: dict) -> dict:
-    """Extract Revision Notes metadata from LIBRARY_REVISION_NOTES_WEB."""
+def _extract_revision_notes(widget: dict) -> dict:
     inner = widget.get("data", {}).get("data", {})
     return {
         "section_title": inner.get("title", "Revision Notes"),
         "subtitle": inner.get("sub_title", ""),
-        "image": (inner.get("image_data") or {}).get("url", ""),
-        "uri": ((inner.get("cta") or {}).get("action") or {}).get("data", {}).get("uri", ""),
+        "uri": (
+            (inner.get("cta") or {}).get("action") or {}
+        ).get("data", {}).get("uri", ""),
     }
 
 
-def extract_custom_practice(widget: dict) -> dict:
-    """Extract Custom Practice quiz config from SELECTION_CARD."""
+def _extract_custom_practice(widget: dict) -> dict:
     wd = widget.get("data", {})
     options = wd.get("options", [])
-    parsed_options = []
-    for opt in options:
-        parsed_options.append({
-            "key": opt.get("key", ""),
-            "label": opt.get("label", ""),
-            "default": (opt.get("default") or {}).get("display_value", ""),
-            "choices": [
-                item.get("display_value", "")
-                for item in opt.get("list", [])
-            ],
-        })
     return {
         "section_title": wd.get("title", "Custom Practice"),
         "subtitle": wd.get("subtitle", ""),
-        "options": parsed_options,
+        "options": [
+            {
+                "key": opt.get("key", ""),
+                "label": opt.get("label", ""),
+                "default": (opt.get("default") or {}).get("display_value", ""),
+                "choices": [i.get("display_value", "") for i in opt.get("list", [])],
+            }
+            for opt in options
+        ],
     }
 
 
-# ──────────────────────────────────────────────
-# Build the final hierarchical output
-# ──────────────────────────────────────────────
+def extract_topic_content(data: dict) -> dict:
+    """Parse a /topic-details response into a clean content dict."""
+    widgets = get_widgets_by_type(data)
+    content: dict = {}
 
-TRANSLATION_KEY_MAP = {
-    "LIBRARY_VIDEOS_WEB": "concept_videos",
-    "LIBRARY_ADDITIONAL_MATERIAL_WEB": "additional_materials",
-    "LIBRARY_STUDY_MODULES_WEB": "study_modules",
-    "LIBRARY_FLASHCARDS_CONTAINER_B1_WEB": "flashcards",
-    "LIBRARY_REVISION_NOTES_WEB": "revision_notes",
-}
+    # Header
+    for w in widgets.get("APP_GENERIC_HEADER_V2", []):
+        wd = w.get("data", {})
+        content["header"] = {
+            "title": wd.get("title", ""),
+            "subtitles": [s.get("text", "") for s in wd.get("subtitles", [])],
+        }
 
-
-def build_syllabus(raw_data: dict) -> dict:
-    """Build the final_syllabus.json structure from the raw API response."""
-
-    widget_index = get_widgets_by_type(raw_data)
-
-    # ── Breadcrumbs ──
-    breadcrumbs = []
-    for w in widget_index.get("BREADCRUMBS", []):
-        breadcrumbs = extract_breadcrumbs(w)
-
-    # ── Header / Topic info ──
-    header = {}
-    for w in widget_index.get("APP_GENERIC_HEADER_V2", []):
-        header = extract_header(w)
-
-    # ── Custom Practice ──
-    custom_practice = {}
-    for w in widget_index.get("SELECTION_CARD", []):
-        custom_practice = extract_custom_practice(w)
-
-    # ── Polymorphic Widgets (main content) ──
-    concept_videos = {}
-    additional_materials = {}
-    study_modules = {}
-    flashcards = {}
-    revision_notes = {}
-
-    for w in widget_index.get("POLYMORPHIC_WIDGET", []):
+    # Polymorphic content blocks
+    for w in widgets.get("POLYMORPHIC_WIDGET", []):
         tkey = w.get("data", {}).get("translation_key", "")
-
         if tkey == "LIBRARY_VIDEOS_WEB":
-            concept_videos = extract_concept_videos(w)
+            content["concept_videos"] = _extract_videos(w)
         elif tkey == "LIBRARY_ADDITIONAL_MATERIAL_WEB":
-            additional_materials = extract_additional_materials(w)
+            content["additional_materials"] = _extract_materials(w)
         elif tkey == "LIBRARY_STUDY_MODULES_WEB":
-            study_modules = extract_study_modules(w)
+            content["study_modules"] = _extract_study_modules(w)
         elif tkey == "LIBRARY_FLASHCARDS_CONTAINER_B1_WEB":
-            flashcards = extract_flashcards(w)
+            content["flashcards"] = _extract_flashcards(w)
         elif tkey == "LIBRARY_REVISION_NOTES_WEB":
-            revision_notes = extract_revision_notes(w)
+            content["revision_notes"] = _extract_revision_notes(w)
 
-    # ── Parse URL parameters for metadata ──
-    page_url = PAYLOAD.get("page_url", "")
-    params = {}
-    if "?" in page_url:
-        for param in page_url.split("?", 1)[1].split("&"):
-            if "=" in param:
-                k, v = param.split("=", 1)
-                params[k] = unquote(v)
+    # Custom practice
+    for w in widgets.get("SELECTION_CARD", []):
+        content["custom_practice"] = _extract_custom_practice(w)
 
-    # ── Statistics ──
-    total_videos = concept_videos.get("total_count", 0)
-    total_pdfs = sum(
-        len(g.get("materials", []))
-        for g in additional_materials.get("groups", [])
-    ) + len(study_modules.get("modules", []))
+    return content
 
-    total_resources = total_pdfs
-    if flashcards:
-        total_resources += 1
-    if revision_notes:
-        total_resources += 1
 
-    # ── Assemble the final structure ──
-    syllabus = {
-        "metadata": {
-            "source": "Allen Digital (allen.in)",
-            "api_endpoint": API_URL,
-            "extracted_at": datetime.now().isoformat(),
-            "stream": params.get("stream", "N/A"),
-            "subject_id": params.get("subject_id", "N/A"),
-            "topic_id": params.get("topic_id", "N/A"),
-            "taxonomy_id": params.get("taxonomy_id", "N/A"),
-            "revision_class": params.get("revision_class", "N/A"),
-            "course_id": params.get("selected_course_id", "N/A"),
-            "batch_ids": params.get("batch_id", "N/A").split(","),
-        },
-        "navigation": {
-            "breadcrumbs": breadcrumbs,
-        },
-        "topic": {
-            "name": header.get("title", ""),
-            "class": next((s for s in header.get("subtitles", []) if "Class" in s), ""),
-            "subject": next(
-                (s for s in header.get("subtitles", []) if "Class" not in s), ""
-            ),
-            "background_image": header.get("background_image", ""),
-        },
-        "statistics": {
-            "total_concept_videos": total_videos,
-            "total_pdfs": total_pdfs,
-            "total_resources": total_resources,
-            "has_flashcards": bool(flashcards),
-            "has_revision_notes": bool(revision_notes),
-            "has_custom_practice": bool(custom_practice),
-        },
-        "content": {
-            "concept_videos": concept_videos,
-            "additional_materials": additional_materials,
-            "study_modules": study_modules,
-            "flashcards": flashcards,
-            "revision_notes": revision_notes,
-            "custom_practice": custom_practice,
-        },
-    }
+def run_phase_2(discovered: dict, progress: Progress) -> dict:
+    """
+    For every topic found in Phase 1, call /topic-details and extract content.
+    Returns the dict that gets merged into the knowledge base.
+    """
+    print("\n" + "=" * 60)
+    print("  PHASE 2 — Extracting topic content via /topic-details")
+    print("=" * 60)
 
-    return syllabus
+    results: dict = {}  # {subject_label: {topic_name: content}}
+    total = sum(len(v) for v in discovered.values())
+    counter = 0
+
+    for subject_label, topics in discovered.items():
+        print(f"\n{'─' * 55}")
+        print(f"  📘 {subject_label} ({len(topics)} topics)")
+        print(f"{'─' * 55}")
+
+        subject_data: dict = {}
+
+        for topic in topics:
+            topic_name = topic["name"]
+            topic_key = f"{subject_label}|{topic_name}"
+            counter += 1
+
+            # Resume support
+            if progress.is_done(topic_key):
+                print(f"\n  [{counter}/{total}] ⏭️  {topic_name} (already done)")
+                existing = _load_existing_topic(subject_label, topic_name)
+                if existing:
+                    subject_data[topic_name] = existing
+                continue
+
+            print(f"\n  [{counter}/{total}] 🔍 {topic_name}")
+
+            query = topic.get("query_params", {})
+            if not query:
+                print("      ⚠️  No query params — skipping")
+                continue
+
+            url = build_topic_url(query)
+            data = api_call(url)
+
+            if not data:
+                print("      ❌ Failed")
+                throttle()
+                continue
+
+            content = extract_topic_content(data)
+            content["topic_id"] = topic.get("topic_id", "")
+
+            # Quick progress line
+            vids = content.get("concept_videos", {}).get("count", 0)
+            dur = content.get("concept_videos", {}).get("total_duration_minutes", 0)
+            n_groups = len(content.get("additional_materials", {}).get("groups", []))
+            n_mods = len(content.get("study_modules", {}).get("modules", []))
+            print(
+                f"      📊 Videos: {vids} ({dur:.0f} min) | "
+                f"Material groups: {n_groups} | Modules: {n_mods}"
+            )
+
+            subject_data[topic_name] = content
+            progress.mark_done(topic_key)
+
+            throttle()
+
+        results[subject_label] = subject_data
+
+    return results
 
 
 # ──────────────────────────────────────────────
-# Pretty printing
+# Persistence — merge without destroying
 # ──────────────────────────────────────────────
 
-def print_syllabus_summary(syllabus: dict):
-    """Print a beautiful console summary of the extracted syllabus."""
-    topic = syllabus["topic"]
-    stats = syllabus["statistics"]
-    nav = syllabus["navigation"]
-    content = syllabus["content"]
+def load_knowledge_base() -> dict:
+    """Load the existing knowledge base, or start fresh."""
+    path = Path(OUTPUT_FILE)
+    if path.exists():
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    return {}
 
-    print()
-    print("=" * 70)
-    print("  EXTRACTED SYLLABUS SUMMARY")
-    print("=" * 70)
 
-    # Breadcrumb path
-    crumb_path = " > ".join(bc["label"] for bc in nav["breadcrumbs"])
-    print(f"  Path: {crumb_path}")
-    print(f"  Topic: {topic['name']}")
-    print(f"  Class: {topic['class']}  |  Subject: {topic['subject']}")
-    print("-" * 70)
-    print(f"  Concept Videos : {stats['total_concept_videos']}")
-    print(f"  PDFs           : {stats['total_pdfs']}")
-    print(f"  Flashcards     : {'Yes' if stats['has_flashcards'] else 'No'}")
-    print(f"  Revision Notes : {'Yes' if stats['has_revision_notes'] else 'No'}")
-    print(f"  Custom Practice: {'Yes' if stats['has_custom_practice'] else 'No'}")
-    print("-" * 70)
+def save_knowledge_base(kb: dict):
+    """Atomic write: tmp → rename."""
+    tmp = Path(OUTPUT_FILE + ".tmp")
+    tmp.write_text(json.dumps(kb, indent=2, ensure_ascii=False), encoding="utf-8")
+    tmp.replace(OUTPUT_FILE)
 
-    # Concept Videos
-    videos = content.get("concept_videos", {})
-    if videos.get("lectures"):
-        print(f"\n  [{videos['section_title']}] ({videos['total_count']} videos)")
-        for lec in videos["lectures"]:
-            seq = lec.get("sequence", "?")
-            title = lec.get("title", "Untitled")
-            dur = lec.get("duration", "N/A")
-            locked = " [LOCKED]" if lec.get("is_locked") else ""
-            progress_str = ""
-            if lec.get("progress"):
-                pct = lec["progress"]["completion"]
-                progress_str = f" ({pct:.1f}% watched)"
 
-            print(f"    {seq:>2}. {title}")
-            print(f"        Duration: {dur}{locked}{progress_str}")
+def merge_results(kb: dict, results: dict):
+    """
+    Merge newly extracted subject→topic data into the knowledge base
+    without overwriting existing entries that weren't re-fetched.
+    """
+    # Ensure top-level metadata
+    if "metadata" not in kb:
+        kb["metadata"] = {}
 
-            if lec.get("sub_topics"):
-                for st in lec["sub_topics"]:
-                    print(f"        Sub-topic: {st}")
+    kb["metadata"].update({
+        "source": "Allen Digital (allen.in)",
+        "api_endpoint": API_URL,
+        "stream": STREAM,
+        "course_id": COURSE_ID,
+        "batch_ids": BATCH_IDS.split(","),
+        "last_updated": datetime.now().isoformat(),
+    })
 
-            if lec.get("video_url"):
-                url_preview = lec["video_url"][:80] + "..."
-                print(f"        Video: {url_preview}")
+    for subject_label, topics_dict in results.items():
+        if not topics_dict:
+            continue
 
-    # Additional Materials
-    materials = content.get("additional_materials", {})
-    if materials.get("groups"):
-        print(f"\n  [{materials['section_title']}]")
-        for group in materials["groups"]:
-            print(f"    >> {group['title']} ({group['subtitle']})")
-            for mat in group.get("materials", []):
-                print(f"       - {mat['title']}")
-                if mat.get("pdf_url"):
-                    print(f"         PDF: {mat['pdf_url'][:80]}...")
+        # Find or create the subject bucket.
+        # The existing KB nests under class names, but since the new
+        # /subject-details call doesn't distinguish class, we merge
+        # at the subject level, preserving existing class structure.
+        # If the subject already exists somewhere, add topics there;
+        # otherwise create a new top-level entry.
+        target = _find_subject_bucket(kb, subject_label)
 
-    # Study Modules
-    mods = content.get("study_modules", {})
-    if mods.get("modules"):
-        print(f"\n  [{mods['section_title']}]")
-        for mod in mods["modules"]:
-            print(f"    - {mod['title']}")
-            if mod.get("pdf_url"):
-                print(f"      PDF: {mod['pdf_url'][:80]}...")
+        if target is None:
+            # Create a fresh top-level entry
+            kb[subject_label] = {
+                "total_topics": len(topics_dict),
+                "topics": {},
+            }
+            target = kb[subject_label]
 
-    # Flashcards
-    fc = content.get("flashcards", {})
-    if fc and fc.get("section_title"):
-        print(f"\n  [{fc['section_title']}] {fc.get('subtitle', '')}")
-        if fc.get("uri"):
-            print(f"    URI: {fc['uri']}")
+        existing_topics = target.setdefault("topics", {})
+        for topic_name, content in topics_dict.items():
+            existing_topics[topic_name] = content
 
-    # Revision Notes
-    rn = content.get("revision_notes", {})
-    if rn and rn.get("section_title"):
-        print(f"\n  [{rn['section_title']}] {rn.get('subtitle', '')}")
-        if rn.get("uri"):
-            print(f"    URI: {rn['uri']}")
+        target["total_topics"] = len(existing_topics)
 
-    # Custom Practice
-    cp = content.get("custom_practice", {})
-    if cp and cp.get("options"):
-        print(f"\n  [{cp['section_title']}] {cp.get('subtitle', '')}")
-        for opt in cp["options"]:
-            choices = ", ".join(opt["choices"][:5])
-            print(f"    {opt['label']}: {opt['default']} (choices: {choices})")
 
-    print()
-    print("=" * 70)
+def _find_subject_bucket(kb: dict, subject_label: str) -> dict | None:
+    """
+    Walk the existing KB structure to find where this subject lives.
+    Handles both flat (`kb["Chemistry"]`) and nested (`kb["Class 11"]["Chemistry"]`).
+    """
+    # Direct key match
+    if subject_label in kb and isinstance(kb[subject_label], dict) and "topics" in kb[subject_label]:
+        return kb[subject_label]
+
+    # Nested under class names
+    for key, val in kb.items():
+        if not isinstance(val, dict):
+            continue
+        if subject_label in val and isinstance(val[subject_label], dict):
+            return val[subject_label]
+
+    return None
+
+
+def _load_existing_topic(subject_label: str, topic_name: str) -> dict:
+    """Load a single previously-extracted topic from the output file."""
+    try:
+        kb = load_knowledge_base()
+        bucket = _find_subject_bucket(kb, subject_label)
+        if bucket:
+            return bucket.get("topics", {}).get(topic_name, {})
+    except Exception:
+        pass
+    return {}
+
+
+# ──────────────────────────────────────────────
+# Summary printer
+# ──────────────────────────────────────────────
+
+def print_summary(results: dict):
+    print("\n" + "=" * 60)
+    print("  📊 EXTRACTION SUMMARY")
+    print("=" * 60)
+
+    grand_vids = 0
+    grand_pdfs = 0
+    grand_mins = 0.0
+
+    for subject, topics in results.items():
+        subj_vids = 0
+        subj_pdfs = 0
+        subj_mins = 0.0
+
+        for _, content in topics.items():
+            v = content.get("concept_videos", {})
+            subj_vids += v.get("count", 0)
+            subj_mins += v.get("total_duration_minutes", 0)
+            subj_pdfs += sum(
+                len(g.get("materials", []))
+                for g in content.get("additional_materials", {}).get("groups", [])
+            )
+            subj_pdfs += len(content.get("study_modules", {}).get("modules", []))
+
+        print(
+            f"\n  {subject}: {len(topics)} topics | "
+            f"{subj_vids} videos ({subj_mins:.0f} min / {subj_mins / 60:.1f} hr) | "
+            f"{subj_pdfs} PDFs"
+        )
+
+        grand_vids += subj_vids
+        grand_pdfs += subj_pdfs
+        grand_mins += subj_mins
+
+    print(f"\n  {'─' * 50}")
+    print(
+        f"  TOTAL: {grand_vids} videos | "
+        f"{grand_mins:.0f} min ({grand_mins / 60:.1f} hr) | {grand_pdfs} PDFs"
+    )
+    print("=" * 60)
 
 
 # ──────────────────────────────────────────────
@@ -569,38 +672,35 @@ def print_syllabus_summary(syllabus: dict):
 # ──────────────────────────────────────────────
 
 def main():
-    print("=" * 70)
-    print("  Allen Data Ripper v2.0")
-    print("=" * 70)
+    print("=" * 60)
+    print("  🚀  Allen Data Ripper v3.0")
+    print(f"  📅  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 60)
 
-    # Step 1: Fetch data from the API
-    raw_data = fetch_page_data()
+    progress = Progress()
 
-    # Step 2: Quick structure check
-    status = raw_data.get("status")
-    reason = raw_data.get("reason")
-    print(f"[+] API Status: {status} {reason}")
+    # Phase 1: discover topic_ids from /subject-details
+    discovered = run_phase_1()
 
-    if status != 200:
-        print("[!] Non-200 status. Check raw_api_response.json for details.")
+    if not discovered:
+        print("\n  ❌ No subjects returned data. Check your token / subject IDs.")
         sys.exit(1)
 
-    # Step 3: Extract & build syllabus
-    print("[*] Extracting curriculum data...")
-    syllabus = build_syllabus(raw_data)
+    # Phase 2: extract content from /topic-details
+    results = run_phase_2(discovered, progress)
 
-    # Step 4: Save to file
-    output_path = Path(OUTPUT_FILE)
-    output_path.write_text(
-        json.dumps(syllabus, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
-    print(f"[+] Syllabus saved to: {output_path.resolve()}")
+    # Merge into existing knowledge base
+    kb = load_knowledge_base()
+    merge_results(kb, results)
+    save_knowledge_base(kb)
 
-    # Step 5: Print human-readable summary
-    print_syllabus_summary(syllabus)
+    # Summary
+    print_summary(results)
 
-    print(f"[+] Done! Total content sections extracted: "
-          f"{sum(1 for v in syllabus['content'].values() if v)}")
+    print(f"\n  ✅ Knowledge base saved → {Path(OUTPUT_FILE).resolve()}")
+    print(f"\n{'=' * 60}")
+    print("  Done. Feed allen_complete_knowledge_base.json to your LLM. 🎓")
+    print(f"{'=' * 60}")
 
 
 if __name__ == "__main__":
