@@ -1,0 +1,24 @@
+# Ignore massive generated folders
+allen_pdfs/
+.venv/
+
+# Ignore outputs
+allen_complete_knowledge_base.json
+rip_progress.json
+probe_*.json
+final_syllabus.json
+universal_curriculum.json
+allen_scraping_roadmap_summary.txt
+
+# PROTECT THIS TOKEN
+allen_token.txt
+
+# Python standard
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env

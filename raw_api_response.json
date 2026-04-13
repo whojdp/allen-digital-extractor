@@ -1,0 +1,2925 @@
+{
+  "status": 200,
+  "reason": "OK",
+  "data": {
+    "has_nudge": false,
+    "page_content": {
+      "floating_widgets": [],
+      "footer_widgets": [],
+      "header_widgets": [],
+      "widgets": [
+        {
+          "const_widget_id": "RPtQ_o2sb5qrh9q6Opva7",
+          "data": {
+            "breadcrumbs": [
+              {
+                "action": {
+                  "data": {
+                    "email": "",
+                    "name": "",
+                    "phone": "",
+                    "query": null,
+                    "type": "",
+                    "uri": "/explore"
+                  },
+                  "tracking_params": null,
+                  "type": "NAVIGATION"
+                },
+                "id": 1,
+                "isActive": false,
+                "label": "Explore"
+              },
+              {
+                "action": {
+                  "data": {
+                    "email": "",
+                    "name": "",
+                    "phone": "",
+                    "query": null,
+                    "type": "",
+                    "uri": "/library-web"
+                  },
+                  "tracking_params": null,
+                  "type": "NAVIGATION"
+                },
+                "id": 2,
+                "isActive": false,
+                "label": "Study"
+              },
+              {
+                "action": {
+                  "data": {
+                    "email": "",
+                    "name": "",
+                    "phone": "",
+                    "query": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26,bt_Ez5lOBgnoJadUVdL7IaXM,bt_Lk86uKMqqav23yczHJHJh",
+                      "selected_batch_list": "bt_dGHnem4IjNtEOVQjfmW26,bt_Ez5lOBgnoJadUVdL7IaXM,bt_Lk86uKMqqav23yczHJHJh",
+                      "selected_course_id": "cr_cpTLbkqWLu96FPkmfoREz",
+                      "stream": "STREAM_JEE_MAIN_ADVANCED",
+                      "subject_id": "746",
+                      "taxonomy_id": "1739171216OJ"
+                    },
+                    "type": "",
+                    "uri": "/subject-details"
+                  },
+                  "tracking_params": null,
+                  "type": "NAVIGATION"
+                },
+                "id": 3,
+                "isActive": false,
+                "label": "Class 11th Syllabus"
+              },
+              {
+                "action": {
+                  "data": {
+                    "email": "",
+                    "name": "",
+                    "phone": "",
+                    "query": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26,bt_Ez5lOBgnoJadUVdL7IaXM,bt_Lk86uKMqqav23yczHJHJh",
+                      "class_12_subject_id": "746",
+                      "class_12_taxonomy_id": "1739171216OJ",
+                      "revision_class": "CLASS_11",
+                      "selected_batch_list": "bt_dGHnem4IjNtEOVQjfmW26,bt_Ez5lOBgnoJadUVdL7IaXM,bt_Lk86uKMqqav23yczHJHJh",
+                      "selected_course_id": "cr_cpTLbkqWLu96FPkmfoREz",
+                      "stream": "STREAM_JEE_MAIN_ADVANCED",
+                      "subject_id": "2",
+                      "taxonomy_id": "1739171216OJ"
+                    },
+                    "type": "",
+                    "uri": "/subject-details"
+                  },
+                  "tracking_params": null,
+                  "type": "NAVIGATION"
+                },
+                "id": 4,
+                "isActive": false,
+                "label": "Chemistry"
+              },
+              {
+                "action": null,
+                "id": 5,
+                "isActive": true,
+                "label": "Mole Concept"
+              }
+            ],
+            "show_in_container": true
+          },
+          "id": 31208,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "RPtQ_o2sb5qrh9q6Opva7"
+            }
+          },
+          "type": "BREADCRUMBS"
+        },
+        {
+          "const_widget_id": "FtjVCfMgCkC9iQKpsMMz_",
+          "data": {
+            "back_icon": {
+              "action": {
+                "data": null,
+                "tracking_params": null,
+                "type": "BACK_NAVIGATION"
+              },
+              "icon_uri": "ARROW_LEFT"
+            },
+            "background_image": {
+              "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+            },
+            "cta": {
+              "action": {
+                "data": {
+                  "email": "",
+                  "name": "",
+                  "phone": "",
+                  "query": null,
+                  "type": "",
+                  "uri": "/doubts"
+                },
+                "tracking_params": null,
+                "type": "NAVIGATION"
+              },
+              "icon_uri": "DOUBTS_V2",
+              "label": "Ask a doubt"
+            },
+            "header_image": null,
+            "highlight_line_color": {
+              "hex_code": "",
+              "name": "event_chemistry"
+            },
+            "right_image": null,
+            "subtitles": [
+              {
+                "color": {
+                  "hex_code": "",
+                  "name": "typography_default_caption"
+                },
+                "text": "Class 11"
+              },
+              {
+                "color": {
+                  "hex_code": "",
+                  "name": "typography_default_caption"
+                },
+                "text": "Chemistry"
+              }
+            ],
+            "title": "Mole Concept"
+          },
+          "id": 30858,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "FtjVCfMgCkC9iQKpsMMz_"
+            }
+          },
+          "type": "APP_GENERIC_HEADER_V2"
+        },
+        {
+          "const_widget_id": "MgnSbzM6EZCKadsfNZG5I",
+          "data": {
+            "background_image": {
+              "name": "",
+              "url": "https://asset.allen-stage.in/09ec29ad-7cdb-480e-af41-86107408faad/original.webp"
+            },
+            "cta": {
+              "action": {
+                "data": {
+                  "email": "",
+                  "loader_config": {
+                    "timeout_in_ms": 5000
+                  },
+                  "method": "POST",
+                  "name": "",
+                  "phone": "",
+                  "query": {
+                    "hide_timer": true,
+                    "topics": [
+                      {
+                        "id": "2",
+                        "node_type": 2,
+                        "sub_nodes": [
+                          {
+                            "id": "89",
+                            "node_type": 4,
+                            "taxonomy_id": "1739171216OJ"
+                          }
+                        ],
+                        "taxonomy_id": "1739171216OJ"
+                      }
+                    ]
+                  },
+                  "type": "",
+                  "uri": "/custom-test"
+                },
+                "tracking_params": {
+                  "current": {
+                    "button_name": "Start Custom Practice",
+                    "subject_id": "2",
+                    "taxonomy_id": "1739171216OJ",
+                    "topic_id": "89"
+                  },
+                  "event_type": "button_clicked"
+                },
+                "type": "FETCH_API"
+              },
+              "icon_uri": "RIGHT_ARROW",
+              "label": "Start Custom Practice"
+            },
+            "image_data": {
+              "name": "",
+              "url": "https://res.cloudinary.com/dpzpn3dkw/image/upload/w_800,f_auto,q_auto/v1736911401/se1pfdfudlrruicjzr29.png"
+            },
+            "options": [
+              {
+                "default": {
+                  "display_value": "Previous Year Questions",
+                  "value": "ADPL-PYQ"
+                },
+                "key": "source",
+                "label": "Source",
+                "list": [
+                  {
+                    "display_value": "Previous Year Questions",
+                    "value": "ADPL-PYQ"
+                  },
+                  {
+                    "display_value": "ALLEN Module",
+                    "value": "ADPL-HW-NEET"
+                  },
+                  {
+                    "display_value": "Important Questions",
+                    "value": "ADPL-Papers-23-2"
+                  }
+                ]
+              },
+              {
+                "default": {
+                  "display_value": "Easy",
+                  "value": "EASY"
+                },
+                "key": "difficulty",
+                "label": "Difficulty",
+                "list": [
+                  {
+                    "display_value": "Easy",
+                    "value": "EASY"
+                  },
+                  {
+                    "display_value": "Medium",
+                    "value": "MEDIUM"
+                  },
+                  {
+                    "display_value": "Hard",
+                    "value": "HARD"
+                  }
+                ]
+              },
+              {
+                "default": {
+                  "display_value": "5",
+                  "value": 5
+                },
+                "key": "question_count",
+                "label": "No of questions",
+                "list": [
+                  {
+                    "display_value": "5",
+                    "value": 5
+                  },
+                  {
+                    "display_value": "15",
+                    "value": 15
+                  },
+                  {
+                    "display_value": "30",
+                    "value": 30
+                  },
+                  {
+                    "display_value": "60",
+                    "value": 60
+                  }
+                ]
+              }
+            ],
+            "subtitle": "Create your own quiz, quickly.",
+            "title": "Custom Practice"
+          },
+          "id": 30864,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "MgnSbzM6EZCKadsfNZG5I"
+            }
+          },
+          "type": "SELECTION_CARD"
+        },
+        {
+          "const_widget_id": "TWO1DL6MrN22mlKmWv_VN",
+          "data": {
+            "data": {
+              "contents_list": [
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "0e5c31a9-108b-41a2-a4e2-bdc1c7020aa4",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Matter: Physical and Chemical Classifications",
+                      "uri": "https://content.allen.in/0e5c31a9-108b-41a2-a4e2-bdc1c7020aa4/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*0e5c31a9-108b-41a2-a4e2-bdc1c7020aa4*~hmac=f28883070dbf19193e22c38944e7559884fae05aac5f15cc925794d2bbb36f27"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Matter: Physical and Chemical Classifications",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "0e5c31a9-108b-41a2-a4e2-bdc1c7020aa4",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Matter: Physical and Chemical Classifications",
+                  "cta": null,
+                  "description": "This video explains the basic concepts of matter by exploring its physical and chemical classifications, the distinction between elements and compounds, and real-life applications of chemistry.",
+                  "duration": "21:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 1,
+                  "sub_topics": [
+                    "Importance Of Chemistry; Nature Of Matter; Basic S.I Units"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "b065ea08-0466-4614-b0a6-5a77a993eabd",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Isotopes, Isobars, and Isoelectronic Species",
+                      "uri": "https://content.allen.in/b065ea08-0466-4614-b0a6-5a77a993eabd/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*b065ea08-0466-4614-b0a6-5a77a993eabd*~hmac=e4cb2ee2659597db7bbbacfda723475a6147b8ec157f4c0864d380e6f1da8590"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Isotopes, Isobars, and Isoelectronic Species",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "b065ea08-0466-4614-b0a6-5a77a993eabd",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Isotopes, Isobars, and Isoelectronic Species",
+                  "cta": null,
+                  "description": "This video offers a detailed exploration of isotopes, isobars, isotones, isodiaphers, isosters, and isoelectronic species, focusing on calculations involving electrons, protons, and neutrons.",
+                  "duration": "25:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 2,
+                  "sub_topics": [
+                    "Isotopes, Isobars, Isotones, Isodiaphers, Isosters & Isoelectronic"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "789f339f-c3bc-45cb-a122-71ebd4de7577",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "progress_info": {
+                        "completion_factor": 0.0011013215,
+                        "elapsed_duration": 1,
+                        "total_duration": 908
+                      },
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Mastering Significant Figures and Rounding Off",
+                      "uri": "https://content.allen.in/789f339f-c3bc-45cb-a122-71ebd4de7577/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*789f339f-c3bc-45cb-a122-71ebd4de7577*~hmac=971635aba40c55c490dbc511f7519cee768f6acbab0e8016626344e5ea00fa97"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Mastering Significant Figures and Rounding Off",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "789f339f-c3bc-45cb-a122-71ebd4de7577",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Mastering Significant Figures and Rounding Off",
+                  "cta": null,
+                  "description": "Learn the rules and applications of significant figures and how to use rounding off for precise measurements.",
+                  "duration": "15:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "progress_info": {
+                    "completion_factor": 0.0011013215,
+                    "elapsed_duration": 1,
+                    "total_duration": 908
+                  },
+                  "sequence": 3,
+                  "sub_topics": [
+                    "Uncertainty in Measurement (Scientific Notation, Significant Figures, Accuracy, Precision, Errors, Rounding off)"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "5bf8e17e-5ee0-4182-92c2-7651829ec79e",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "progress_info": {
+                        "completion_factor": 0.7675953,
+                        "elapsed_duration": 1047,
+                        "total_duration": 1364
+                      },
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Laws of Chemical Combinations",
+                      "uri": "https://content.allen.in/5bf8e17e-5ee0-4182-92c2-7651829ec79e/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*5bf8e17e-5ee0-4182-92c2-7651829ec79e*~hmac=fdef97f209b77dbe6c300a5ec62a6e19575175779a504368a56a8e2bcaefec37"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Laws of Chemical Combinations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "5bf8e17e-5ee0-4182-92c2-7651829ec79e",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Laws of Chemical Combinations",
+                  "cta": null,
+                  "description": "Explore the foundational laws of chemical combinations including conservation of mass, definite proportion, multiple proportion, and reciprocal proportion through examples and explanations.",
+                  "duration": "23:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "progress_info": {
+                    "completion_factor": 0.7675953,
+                    "elapsed_duration": 1047,
+                    "total_duration": 1364
+                  },
+                  "sequence": 4,
+                  "sub_topics": [
+                    "Laws Of Chemical Combinations"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "8d8e82b3-d85a-4a03-bed7-6cb28b451ad9",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "progress_info": {
+                        "completion_factor": 0.97132075,
+                        "elapsed_duration": 1287,
+                        "total_duration": 1325
+                      },
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Mole Concept: Basics, Calculations, and Applications",
+                      "uri": "https://content.allen.in/8d8e82b3-d85a-4a03-bed7-6cb28b451ad9/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*8d8e82b3-d85a-4a03-bed7-6cb28b451ad9*~hmac=997dd9394b679209ddf66f10ec5a85317de9db5792e5b85867b01ff12d67ae3e"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Mole Concept: Basics, Calculations, and Applications",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "8d8e82b3-d85a-4a03-bed7-6cb28b451ad9",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Mole Concept: Basics, Calculations, and Applications",
+                  "cta": null,
+                  "description": "This video provides a detailed introduction to the mole concept, explores mole calculations, and discusses applications in stoichiometry.",
+                  "duration": "22:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "progress_info": {
+                    "completion_factor": 0.97132075,
+                    "elapsed_duration": 1287,
+                    "total_duration": 1325
+                  },
+                  "sequence": 5,
+                  "sub_topics": [
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "e291c50d-b1d8-430e-a981-341bb7046a95",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Mastering Mole Calculations and Atomic Concepts",
+                      "uri": "https://content.allen.in/e291c50d-b1d8-430e-a981-341bb7046a95/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*e291c50d-b1d8-430e-a981-341bb7046a95*~hmac=bd20aa65ed61c5b085daec8b67ce6d4a98feda73c273c3325d4b9c45c276572c"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Mastering Mole Calculations and Atomic Concepts",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "e291c50d-b1d8-430e-a981-341bb7046a95",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Mastering Mole Calculations and Atomic Concepts",
+                  "cta": null,
+                  "description": "This video explores detailed calculations involving moles, atomic mass, and stoichiometry, providing a strong foundation in mole concepts through practical examples.",
+                  "duration": "18:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 6,
+                  "sub_topics": [
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "6af508b3-ddd2-4445-a776-1571c655437c",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Atomic and Molecular Mass: Concepts and Calculations",
+                      "uri": "https://content.allen.in/6af508b3-ddd2-4445-a776-1571c655437c/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*6af508b3-ddd2-4445-a776-1571c655437c*~hmac=9e07e79102543478f970a1ee7ae984ffbad10569c6dfc812355ad3b05794522a"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Atomic and Molecular Mass: Concepts and Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "6af508b3-ddd2-4445-a776-1571c655437c",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Atomic and Molecular Mass: Concepts and Calculations",
+                  "cta": null,
+                  "description": "Explore the intricacies of atomic and molecular masses, including atomic mass units (AMU), isotopes, and percentage composition. Learn how to calculate average atomic and molecular mass using practical examples.",
+                  "duration": "30:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 7,
+                  "sub_topics": [
+                    "Dalton's Atomic Theory; Atomic Mass(RAM, GAM); Molecular Mass(RMM, GMM), Average Atomic and Molecular Mass",
+                    "Percentage Composition"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "3cfdb8ff-6838-41b6-9a18-b5dbb3340ff5",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Gas Mole Calculations & Ideal Gas Equation Application",
+                      "uri": "https://content.allen.in/3cfdb8ff-6838-41b6-9a18-b5dbb3340ff5/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*3cfdb8ff-6838-41b6-9a18-b5dbb3340ff5*~hmac=4b0add7ea579690ff14a1f8b4f0679e8a50d69957c4947711f792d8f86f0421d"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Gas Mole Calculations & Ideal Gas Equation Application",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "3cfdb8ff-6838-41b6-9a18-b5dbb3340ff5",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Gas Mole Calculations & Ideal Gas Equation Application",
+                  "cta": null,
+                  "description": "Learn how to calculate moles for gases using the ideal gas equation and different STP conditions, along with stoichiometry and molecular mass calculations.",
+                  "duration": "27:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 8,
+                  "sub_topics": [
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)",
+                    "Ideal Gas Equation\r\n Relative Density, Vapour Density",
+                    "Percentage Composition"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "a5237cf6-0e96-4b08-bd57-6bf159f04685",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Solving Problems with the Ideal Gas Equation",
+                      "uri": "https://content.allen.in/a5237cf6-0e96-4b08-bd57-6bf159f04685/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*a5237cf6-0e96-4b08-bd57-6bf159f04685*~hmac=70330fd6c0c9d37452a4d1589ce29009307071dfe48f28d0655c3a31623600e2"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Solving Problems with the Ideal Gas Equation",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "a5237cf6-0e96-4b08-bd57-6bf159f04685",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Solving Problems with the Ideal Gas Equation",
+                  "cta": null,
+                  "description": "This video demonstrates problem-solving techniques for various questions using the Ideal Gas Equation and mole concept.",
+                  "duration": "10:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 9,
+                  "sub_topics": [
+                    "Ideal Gas Equation\r\n Relative Density, Vapour Density",
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "93a70dd9-b39e-4700-8a37-2a8e4f17fbc1",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "progress_info": {
+                        "completion_factor": 0.9615861,
+                        "elapsed_duration": 776,
+                        "total_duration": 807
+                      },
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Density and Vapor Density",
+                      "uri": "https://content.allen.in/93a70dd9-b39e-4700-8a37-2a8e4f17fbc1/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*93a70dd9-b39e-4700-8a37-2a8e4f17fbc1*~hmac=c906b018b32cb44d1eb7cdeaea174347332662a178773b4ad31672f1fd0f404b"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Density and Vapor Density",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "93a70dd9-b39e-4700-8a37-2a8e4f17fbc1",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Density and Vapor Density",
+                  "cta": null,
+                  "description": "Explore concepts of absolute and relative density, including vapor density using the ideal gas equation.",
+                  "duration": "13:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "progress_info": {
+                    "completion_factor": 0.9615861,
+                    "elapsed_duration": 776,
+                    "total_duration": 807
+                  },
+                  "sequence": 10,
+                  "sub_topics": [
+                    "Ideal Gas Equation\r\n Relative Density, Vapour Density",
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)",
+                    "Percentage Composition"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "233e3f28-fcf8-48b0-95df-ad4181f9b139",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Master Stoichiometry: Concept & Calculations",
+                      "uri": "https://content.allen.in/233e3f28-fcf8-48b0-95df-ad4181f9b139/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*233e3f28-fcf8-48b0-95df-ad4181f9b139*~hmac=e860700733b4e7feea5edb9fda259e599460f7ac3a8caf4c0c147f3a80a68448"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Master Stoichiometry: Concept & Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "233e3f28-fcf8-48b0-95df-ad4181f9b139",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Master Stoichiometry: Concept & Calculations",
+                  "cta": null,
+                  "description": "Dive deep into the stoichiometric concept and learn how to perform stoichiometry calculations involving reactants and products without limiting reagents.",
+                  "duration": "24:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 11,
+                  "sub_topics": [
+                    "Stoichiometry and Stoichiometric Calculations Without Limiting Reagent"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "2aeb8928-e35d-4b00-b9ce-635f1ecdf296",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "progress_info": {
+                        "completion_factor": 0.9686907,
+                        "elapsed_duration": 1021,
+                        "total_duration": 1054
+                      },
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Combustion and Stoichiometry: Calculating C, H, O Percentages",
+                      "uri": "https://content.allen.in/2aeb8928-e35d-4b00-b9ce-635f1ecdf296/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*2aeb8928-e35d-4b00-b9ce-635f1ecdf296*~hmac=e1662f5a8f5a82b9f6d5fce8f5d3e9dc5d68a33c04a29c7330ecb630458befcd"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Combustion and Stoichiometry: Calculating C, H, O Percentages",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "2aeb8928-e35d-4b00-b9ce-635f1ecdf296",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Combustion and Stoichiometry: Calculating C, H, O Percentages",
+                  "cta": null,
+                  "description": "Learn about the combustion process of hydrocarbons, stoichiometry, and calculating carbon, hydrogen, and oxygen percentages.",
+                  "duration": "18:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "progress_info": {
+                    "completion_factor": 0.9686907,
+                    "elapsed_duration": 1021,
+                    "total_duration": 1054
+                  },
+                  "sequence": 12,
+                  "sub_topics": [
+                    "Stoichiometry With Limiting Reagent And Excess Reagents"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "7156ba61-c29f-4706-b27d-2443206934b5",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Mastering Limiting Reagents in Stoichiometry",
+                      "uri": "https://content.allen.in/7156ba61-c29f-4706-b27d-2443206934b5/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*7156ba61-c29f-4706-b27d-2443206934b5*~hmac=55c88b478b8b326197570863b1b8b71621ee7e21c624df399ec2e88ecd01cb54"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Mastering Limiting Reagents in Stoichiometry",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "7156ba61-c29f-4706-b27d-2443206934b5",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Mastering Limiting Reagents in Stoichiometry",
+                  "cta": null,
+                  "description": "This video offers a comprehensive explanation of limiting and excess reagents in stoichiometry, complete with practical examples and problem-solving demonstrations.",
+                  "duration": "23:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 13,
+                  "sub_topics": [
+                    "Stoichiometry With Limiting Reagent And Excess Reagents"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "259a1089-bb82-40ec-b978-2c4f18babaf1",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Stoichiometry and Limiting Reagents in Chemistry Problems",
+                      "uri": "https://content.allen.in/259a1089-bb82-40ec-b978-2c4f18babaf1/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*259a1089-bb82-40ec-b978-2c4f18babaf1*~hmac=08ee881e1ee0d899e7516e83e302ca2745f449f1fb83bf765e920e49ea7ff3ee"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Stoichiometry and Limiting Reagents in Chemistry Problems",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "259a1089-bb82-40ec-b978-2c4f18babaf1",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Stoichiometry and Limiting Reagents in Chemistry Problems",
+                  "cta": null,
+                  "description": "Explore stoichiometry concepts and solve chemistry problems focusing on limiting reagents through practical examples and calculations.",
+                  "duration": "18:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 14,
+                  "sub_topics": [
+                    "Stoichiometry With Limiting Reagent And Excess Reagents"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "632d9805-68e7-41d6-ac2c-41616d63db13",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Percentage Composition and Purity Calculations in Chemistry",
+                      "uri": "https://content.allen.in/632d9805-68e7-41d6-ac2c-41616d63db13/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*632d9805-68e7-41d6-ac2c-41616d63db13*~hmac=945d11a976cb0abf2d590ac1207e57ee5a78cd380e0339daeac9780c081bffc1"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Percentage Composition and Purity Calculations in Chemistry",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "632d9805-68e7-41d6-ac2c-41616d63db13",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Percentage Composition and Purity Calculations in Chemistry",
+                  "cta": null,
+                  "description": "Learn to calculate mass and mole percentages, assess sample purity, and tackle impurity-related problems using mole concepts in chemistry.",
+                  "duration": "24:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 15,
+                  "sub_topics": [
+                    "Percentage Composition",
+                    "Percentage Yield; Percentage Purity"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "8c267f32-c307-4c80-869b-b63fa1144ad9",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Percentage Yield with Stoichiometry and Mole Concepts",
+                      "uri": "https://content.allen.in/8c267f32-c307-4c80-869b-b63fa1144ad9/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*8c267f32-c307-4c80-869b-b63fa1144ad9*~hmac=8f3faebf676538a221160fc7d59f7c4438a5891c079cd2e50650990eb3e83b92"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Percentage Yield with Stoichiometry and Mole Concepts",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "8c267f32-c307-4c80-869b-b63fa1144ad9",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Percentage Yield with Stoichiometry and Mole Concepts",
+                  "cta": null,
+                  "description": "Learn to calculate percentage yield, its significance, and apply stoichiometry for accurate product predictions using the mole concept.",
+                  "duration": "16:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 16,
+                  "sub_topics": [
+                    "Percentage Yield; Percentage Purity"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "cc2145e5-e48d-4c37-90ff-221fdfed2024",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Percentage Yield in Stoichiometry",
+                      "uri": "https://content.allen.in/cc2145e5-e48d-4c37-90ff-221fdfed2024/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*cc2145e5-e48d-4c37-90ff-221fdfed2024*~hmac=935c5a84f1493113bc3008bfb2504b4f0b12d7c2b6a7317735e84e8b64b4aadd"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Percentage Yield in Stoichiometry",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "cc2145e5-e48d-4c37-90ff-221fdfed2024",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Percentage Yield in Stoichiometry",
+                  "cta": null,
+                  "description": "Explore percentage yield calculations in stoichiometry through detailed problem-solving sessions.",
+                  "duration": "14:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 17,
+                  "sub_topics": [
+                    "Percentage Yield; Percentage Purity"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "1c8d401b-2a1a-4f7d-b103-5f9e721a74a7",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Atom Conservation in Chemical Reactions Using POAC",
+                      "uri": "https://content.allen.in/1c8d401b-2a1a-4f7d-b103-5f9e721a74a7/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*1c8d401b-2a1a-4f7d-b103-5f9e721a74a7*~hmac=98193f9306e8a34a4415fbaca7e54eb0d3d62973c976311a6687cf3e03d41e96"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Atom Conservation in Chemical Reactions Using POAC",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "1c8d401b-2a1a-4f7d-b103-5f9e721a74a7",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Atom Conservation in Chemical Reactions Using POAC",
+                  "cta": null,
+                  "description": "Learn how to use the Principle of Atom Conservation (POAC) to solve chemical reaction problems by conserving atoms and calculating moles without balancing reactions.",
+                  "duration": "16:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 18,
+                  "sub_topics": [
+                    "Principle Of Atom Conservation (POAC)"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "5cbf600a-3fcd-4fe9-b36f-4177dfb37763",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Degree of Dissociation and Mole Calculations",
+                      "uri": "https://content.allen.in/5cbf600a-3fcd-4fe9-b36f-4177dfb37763/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*5cbf600a-3fcd-4fe9-b36f-4177dfb37763*~hmac=357e9e470f79bec7e7c987b263978e9b5a3540dd51b8f72c55849e4d3e8aef6f"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Degree of Dissociation and Mole Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "5cbf600a-3fcd-4fe9-b36f-4177dfb37763",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Degree of Dissociation and Mole Calculations",
+                  "cta": null,
+                  "description": "The video thoroughly explains the concept of degree of dissociation with mole calculations, offering practical examples and formulas to calculate molecular mass and other related properties.",
+                  "duration": "29:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 19,
+                  "sub_topics": [
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)",
+                    "Molarity",
+                    "Ideal Gas Equation\r\n Relative Density, Vapour Density"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "4b8980a1-943f-4f47-a58f-42dc0a036de8",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Mixture Problems and Stoichiometry Calculations",
+                      "uri": "https://content.allen.in/4b8980a1-943f-4f47-a58f-42dc0a036de8/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*4b8980a1-943f-4f47-a58f-42dc0a036de8*~hmac=f3908507cc4ad1cc9dda3ef57c2142726de6adab044b3f0fc222ac9b952304d4"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Mixture Problems and Stoichiometry Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "4b8980a1-943f-4f47-a58f-42dc0a036de8",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Mixture Problems and Stoichiometry Calculations",
+                  "cta": null,
+                  "description": "Explore mixture problems and detailed stoichiometry calculations, including combustion and percentage composition.",
+                  "duration": "26:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 20,
+                  "sub_topics": [
+                    "Problems On Mixture; Sample Impurity And Heating Effect"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "0a403d0c-3fab-4b48-babf-33aebe3142da",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Solving Parallel Reactions using Sequential and Mixed Methods",
+                      "uri": "https://content.allen.in/0a403d0c-3fab-4b48-babf-33aebe3142da/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*0a403d0c-3fab-4b48-babf-33aebe3142da*~hmac=b3ee09859c9f37d86c5539e06216c1db504c96ba4284afb12671e0330d785bb1"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Solving Parallel Reactions using Sequential and Mixed Methods",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "0a403d0c-3fab-4b48-babf-33aebe3142da",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Solving Parallel Reactions using Sequential and Mixed Methods",
+                  "cta": null,
+                  "description": "Learn how to calculate product quantities in parallel reactions by using sequential and mixed reaction methods with detailed problem-solving steps.",
+                  "duration": "26:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 21,
+                  "sub_topics": [
+                    "Parallel Reaction; Sequential Reaction"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "0fc6f20e-6200-4b12-ad11-0532f38f8c23",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Sequential Reactions and Stoichiometry Problems",
+                      "uri": "https://content.allen.in/0fc6f20e-6200-4b12-ad11-0532f38f8c23/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*0fc6f20e-6200-4b12-ad11-0532f38f8c23*~hmac=f6a41c49adcbd135ecb1fefbc1ad37a3d2c7690aa6070a08a9331b2b0155223d"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Sequential Reactions and Stoichiometry Problems",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "0fc6f20e-6200-4b12-ad11-0532f38f8c23",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Sequential Reactions and Stoichiometry Problems",
+                  "cta": null,
+                  "description": "Learn about sequential reactions and solve related stoichiometry problems, identifying limiting reagents and calculating product quantities.",
+                  "duration": "23:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 22,
+                  "sub_topics": [
+                    "Parallel Reaction; Sequential Reaction"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "39c2f7fa-c7a9-4723-ae78-cbbb35a9f45d",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Empirical and Molecular Formulae: Understanding and Calculation",
+                      "uri": "https://content.allen.in/39c2f7fa-c7a9-4723-ae78-cbbb35a9f45d/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*39c2f7fa-c7a9-4723-ae78-cbbb35a9f45d*~hmac=a99bc026eaa906835856a71a3925f9a57a6de2ec93a34840ecbd081fa17d2ad7"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Empirical and Molecular Formulae: Understanding and Calculation",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "39c2f7fa-c7a9-4723-ae78-cbbb35a9f45d",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Empirical and Molecular Formulae: Understanding and Calculation",
+                  "cta": null,
+                  "description": "Learn how to determine empirical and molecular formulae and understand their differences with practical calculation examples.",
+                  "duration": "18:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 23,
+                  "sub_topics": [
+                    "Empirical And Molecular Formulae"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "e6f44901-4da4-4055-bbe9-ac0ddc7afc40",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Eudiometry and Gas Volume Calculations",
+                      "uri": "https://content.allen.in/e6f44901-4da4-4055-bbe9-ac0ddc7afc40/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*e6f44901-4da4-4055-bbe9-ac0ddc7afc40*~hmac=12f9c5ebe4d6cb6f78e0cd94e286bc73f92f6c908bcba9e21ae13d02b83ff3c3"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Eudiometry and Gas Volume Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "e6f44901-4da4-4055-bbe9-ac0ddc7afc40",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Eudiometry and Gas Volume Calculations",
+                  "cta": null,
+                  "description": "Explore the concept of Eudiometry and gain insights into stoichiometry and gas volume calculations using real-life examples.",
+                  "duration": "28:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 24,
+                  "sub_topics": [
+                    "Gay Lussac's Law Of Combining Volumes; Eudiometry, Amagat's law"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "2ccae5bb-a720-43e3-86e5-3b43d0bc6f1b",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Solving Eudiometry Problems in Chemistry",
+                      "uri": "https://content.allen.in/2ccae5bb-a720-43e3-86e5-3b43d0bc6f1b/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*2ccae5bb-a720-43e3-86e5-3b43d0bc6f1b*~hmac=d58730b5975eb9af2038b6ac317b68ce34fcdaa594586b131b2469691a6c64a6"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Solving Eudiometry Problems in Chemistry",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "2ccae5bb-a720-43e3-86e5-3b43d0bc6f1b",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Solving Eudiometry Problems in Chemistry",
+                  "cta": null,
+                  "description": "This video provides detailed solutions to complex eudiometry problems, demonstrating gas volume calculations and reactions.",
+                  "duration": "17:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 25,
+                  "sub_topics": [
+                    "Gay Lussac's Law Of Combining Volumes; Eudiometry, Amagat's law"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "b11bace7-66bc-4c4b-98db-3a79877f64e1",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Concentration Terms: Mass Percentage",
+                      "uri": "https://content.allen.in/b11bace7-66bc-4c4b-98db-3a79877f64e1/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*b11bace7-66bc-4c4b-98db-3a79877f64e1*~hmac=106db27b479decbbe5be3a387249e7f33bb54bce902f872cb7e4c95519cbac17"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Concentration Terms: Mass Percentage",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "b11bace7-66bc-4c4b-98db-3a79877f64e1",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Concentration Terms: Mass Percentage",
+                  "cta": null,
+                  "description": "Delve into concentration terms, focusing on mass percentage and how it's calculated in solutions.",
+                  "duration": "19:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 26,
+                  "sub_topics": [
+                    "Concentration Terms; Percentage w/W; Percentage w/V; Percentage v/V; Grams Per Litre",
+                    "Mass Fraction",
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "2e1bb747-5f36-4b7b-a765-70a4e8882e51",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Concentration: Percentage, Strength, and Volume Formulae",
+                      "uri": "https://content.allen.in/2e1bb747-5f36-4b7b-a765-70a4e8882e51/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*2e1bb747-5f36-4b7b-a765-70a4e8882e51*~hmac=dc523bbc4e2fb580e9cc228e118f6f5f016d70f2b1c6002618fd3a6557341fec"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Concentration: Percentage, Strength, and Volume Formulae",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "2e1bb747-5f36-4b7b-a765-70a4e8882e51",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Concentration: Percentage, Strength, and Volume Formulae",
+                  "cta": null,
+                  "description": "Learn about concentration terms with a focus on mass by volume percentage and strength, using practical examples and formulas.",
+                  "duration": "17:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 27,
+                  "sub_topics": [
+                    "Concentration Terms; Percentage w/W; Percentage w/V; Percentage v/V; Grams Per Litre",
+                    "Molarity",
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "afdde82f-9ca6-4668-94c5-a1ea97e9e308",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Volume Percentage and Its Calculations",
+                      "uri": "https://content.allen.in/afdde82f-9ca6-4668-94c5-a1ea97e9e308/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*afdde82f-9ca6-4668-94c5-a1ea97e9e308*~hmac=40121276fd5d4e5eae6d7390b3e18a8e1cc9561a3282b78f0d535109fb44b446"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Volume Percentage and Its Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "afdde82f-9ca6-4668-94c5-a1ea97e9e308",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Volume Percentage and Its Calculations",
+                  "cta": null,
+                  "description": "Learn how to calculate volume percentage, including temperature dependency and practical examples for solutes and solvents.",
+                  "duration": "10:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 28,
+                  "sub_topics": [
+                    "Concentration Terms; Percentage w/W; Percentage w/V; Percentage v/V; Grams Per Litre"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "058af3c6-23d0-4798-8f00-09745a2061dd",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding PPM and PPB: Concentration Calculations",
+                      "uri": "https://content.allen.in/058af3c6-23d0-4798-8f00-09745a2061dd/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*058af3c6-23d0-4798-8f00-09745a2061dd*~hmac=dedaa4c6ea03fcf2c6f5391458ee4cbdb8fcd73cef9653892dcbae242790f762"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding PPM and PPB: Concentration Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "058af3c6-23d0-4798-8f00-09745a2061dd",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding PPM and PPB: Concentration Calculations",
+                  "cta": null,
+                  "description": "This video explains concepts of parts per million (PPM) and parts per billion (PPB), and includes solving related numerical problems.",
+                  "duration": "12:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 29,
+                  "sub_topics": [
+                    "Part Per Million(ppm); Part Per Billion (ppb)",
+                    "Mass Fraction"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "87e55c23-1986-4e76-b647-824055e4de9e",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Comprehensive Guide to Molarity Calculations",
+                      "uri": "https://content.allen.in/87e55c23-1986-4e76-b647-824055e4de9e/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*87e55c23-1986-4e76-b647-824055e4de9e*~hmac=12155d2382e41ce4b82607006c2f59f5217ded4130b4890d4f6fcfa9838551dd"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Comprehensive Guide to Molarity Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "87e55c23-1986-4e76-b647-824055e4de9e",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Comprehensive Guide to Molarity Calculations",
+                  "cta": null,
+                  "description": "Learn the fundamentals of molarity, including its definition, formula, unit conversions, and solving molarity-based problems with detailed examples.",
+                  "duration": "26:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 30,
+                  "sub_topics": [
+                    "Molarity",
+                    "Mixing and Dilution; Conversion of one concentration term to another"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "baa6feda-f5f1-4f29-8b96-029a8cf008f4",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Molarity and Mole Fraction Calculations",
+                      "uri": "https://content.allen.in/baa6feda-f5f1-4f29-8b96-029a8cf008f4/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*baa6feda-f5f1-4f29-8b96-029a8cf008f4*~hmac=600f1177c6b6fc416b8ffd4821f01f0609f54b6661a5822f8f8ae328c4c91727"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Molarity and Mole Fraction Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "baa6feda-f5f1-4f29-8b96-029a8cf008f4",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Molarity and Mole Fraction Calculations",
+                  "cta": null,
+                  "description": "Learn about the calculation of molarity and mole fraction through example problems, enhancing your understanding of solutions and concentration terms.",
+                  "duration": "13:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 31,
+                  "sub_topics": [
+                    "Molarity",
+                    "Mole Fraction",
+                    "Mixing and Dilution; Conversion of one concentration term to another"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "bf301f5f-9604-460b-8da8-1339afc94554",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Molality: Definition, Formula, and Calculations",
+                      "uri": "https://content.allen.in/bf301f5f-9604-460b-8da8-1339afc94554/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*bf301f5f-9604-460b-8da8-1339afc94554*~hmac=d133b5e0a97e0ac6d4007ce2dab093be45a00fa877c6c2c8b215ca0ad9711bb8"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Molality: Definition, Formula, and Calculations",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "bf301f5f-9604-460b-8da8-1339afc94554",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Molality: Definition, Formula, and Calculations",
+                  "cta": null,
+                  "description": "This video covers the concept of molality, including its definition, formula, and temperature independence, along with various example calculations to understand its practical application.",
+                  "duration": "12:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 32,
+                  "sub_topics": [
+                    "Molality",
+                    "Molarity"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "2225971b-504c-4c33-bc3a-89abfe4554eb",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Solving JEE Questions on Molality and Mole Fraction",
+                      "uri": "https://content.allen.in/2225971b-504c-4c33-bc3a-89abfe4554eb/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*2225971b-504c-4c33-bc3a-89abfe4554eb*~hmac=5673a8e0d07624e23022824918f6908688bcea10ad565f63cb994f7504ff7faa"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Solving JEE Questions on Molality and Mole Fraction",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "2225971b-504c-4c33-bc3a-89abfe4554eb",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Solving JEE Questions on Molality and Mole Fraction",
+                  "cta": null,
+                  "description": "Learn to solve complex JEE questions on molality and mole fraction with step-by-step calculations and tips.",
+                  "duration": "13:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 33,
+                  "sub_topics": [
+                    "Molality",
+                    "Mole Fraction",
+                    "Molarity",
+                    "Mixing and Dilution; Conversion of one concentration term to another"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "cf373ed1-24d5-403d-8616-6c60a861b343",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Mole and Mass Fractions",
+                      "uri": "https://content.allen.in/cf373ed1-24d5-403d-8616-6c60a861b343/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*cf373ed1-24d5-403d-8616-6c60a861b343*~hmac=25491e4532899b8106289995146b6fe44430241f0eedc06798a0b51d7b148802"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Mole and Mass Fractions",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "cf373ed1-24d5-403d-8616-6c60a861b343",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Mole and Mass Fractions",
+                  "cta": null,
+                  "description": "This video explains the concepts of mole and mass fractions with examples and problem-solving, providing insights into their computations and characteristics.",
+                  "duration": "14:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 34,
+                  "sub_topics": [
+                    "Mole Fraction",
+                    "Mass Fraction"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "f04beea3-a420-47e6-aa7c-a69f5bccae1a",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Interconversion of Molarity and Molality with Applications",
+                      "uri": "https://content.allen.in/f04beea3-a420-47e6-aa7c-a69f5bccae1a/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*f04beea3-a420-47e6-aa7c-a69f5bccae1a*~hmac=690be28949e23bcc17049b468ed894af05f79e389b0fc5c3623851764946dfe0"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Interconversion of Molarity and Molality with Applications",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "f04beea3-a420-47e6-aa7c-a69f5bccae1a",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Interconversion of Molarity and Molality with Applications",
+                  "cta": null,
+                  "description": "Learn the interconversion formulas between molarity and molality, essential concentration terms, and tackle practical problems involving mole fraction and percentage compositions.",
+                  "duration": "31:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 35,
+                  "sub_topics": [
+                    "Concentration Terms; Percentage w/W; Percentage w/V; Percentage v/V; Grams Per Litre",
+                    "Molality",
+                    "Molarity",
+                    "Mole Fraction"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "b333a673-b5f3-4c1b-b67e-71c08e3fda36",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Mastering Mixing and Dilution in Chemistry",
+                      "uri": "https://content.allen.in/b333a673-b5f3-4c1b-b67e-71c08e3fda36/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*b333a673-b5f3-4c1b-b67e-71c08e3fda36*~hmac=9c7295f95365411abd04a4f18716a9db6cf50b46358afb479121d9eac3785122"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Mastering Mixing and Dilution in Chemistry",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "b333a673-b5f3-4c1b-b67e-71c08e3fda36",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Mastering Mixing and Dilution in Chemistry",
+                  "cta": null,
+                  "description": "Learn how to perform and calculate mixing and dilution in chemical solutions efficiently, including practical examples and calculations.",
+                  "duration": "24:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 36,
+                  "sub_topics": [
+                    "Mixing and Dilution; Conversion of one concentration term to another",
+                    "Molarity"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "557ef85f-ea6e-449a-b89d-01958b514804",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Mixing, Dilution, and Stoichiometry in Solutions",
+                      "uri": "https://content.allen.in/557ef85f-ea6e-449a-b89d-01958b514804/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*557ef85f-ea6e-449a-b89d-01958b514804*~hmac=865577eec164dfc82d33b3631d35e541e5f6767437d235bcf25bb6db5b77afb7"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Mixing, Dilution, and Stoichiometry in Solutions",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "557ef85f-ea6e-449a-b89d-01958b514804",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Mixing, Dilution, and Stoichiometry in Solutions",
+                  "cta": null,
+                  "description": "This video covers mixing and dilution principles, calculating molarity, and stoichiometry involving limiting and excess reagents in chemical solutions.",
+                  "duration": "24:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 37,
+                  "sub_topics": [
+                    "Mixing and Dilution; Conversion of one concentration term to another",
+                    "Molarity",
+                    "Stoichiometry With Limiting Reagent And Excess Reagents"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "e9c05d95-3ede-4545-9354-50b2b2b07785",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Calculating Volume Strength and Molarity of H2O2",
+                      "uri": "https://content.allen.in/e9c05d95-3ede-4545-9354-50b2b2b07785/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*e9c05d95-3ede-4545-9354-50b2b2b07785*~hmac=f10f473262e21aed88cb0672689336f6482c8701e8c1d3d5cfdfda93b710651c"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Calculating Volume Strength and Molarity of H2O2",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "e9c05d95-3ede-4545-9354-50b2b2b07785",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Calculating Volume Strength and Molarity of H2O2",
+                  "cta": null,
+                  "description": "Learn how to calculate the volume strength and molarity of H2O2 solutions, and understand their practical implications and calculations.",
+                  "duration": "15:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 38,
+                  "sub_topics": [
+                    "Volume Strength Of H2O2",
+                    "Molarity"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "e91bc0f0-b744-4e4e-a277-4297688e8b42",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Detailed Exploration of Volume Strength and Molarity of H2O2",
+                      "uri": "https://content.allen.in/e91bc0f0-b744-4e4e-a277-4297688e8b42/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*e91bc0f0-b744-4e4e-a277-4297688e8b42*~hmac=49e2f068ef347743caa97c81bc6c03807f484dca950713e89cd351af7289e63f"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Detailed Exploration of Volume Strength and Molarity of H2O2",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "e91bc0f0-b744-4e4e-a277-4297688e8b42",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Detailed Exploration of Volume Strength and Molarity of H2O2",
+                  "cta": null,
+                  "description": "Gain insights into volume strength, stoichiometry, and dilution principles applied to H2O2 through illustrative examples and calculations.",
+                  "duration": "16:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 39,
+                  "sub_topics": [
+                    "Volume Strength Of H2O2"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "762edec4-8e5c-49c5-a9d8-c5459264aa07",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Equivalent Mass and Normality",
+                      "uri": "https://content.allen.in/762edec4-8e5c-49c5-a9d8-c5459264aa07/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*762edec4-8e5c-49c5-a9d8-c5459264aa07*~hmac=cf5205ad293ab485d1f554973eac6c9a1558214bcacdbd891fd2e3dfc0b700d7"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Equivalent Mass and Normality",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "762edec4-8e5c-49c5-a9d8-c5459264aa07",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Equivalent Mass and Normality",
+                  "cta": null,
+                  "description": "Learn the concepts of equivalent mass and normality, and how they relate to molarity in stoichiometric calculations.",
+                  "duration": "16:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 40,
+                  "sub_topics": [
+                    "Molarity",
+                    "Mole Concept (Basic Introduction To Mole, Mole Calculations)",
+                    "Concentration Terms; Percentage w/W; Percentage w/V; Percentage v/V; Grams Per Litre",
+                    "Stoichiometry and Stoichiometric Calculations Without Limiting Reagent"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                },
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "235dddb2-2157-4197-a267-ffb608175186",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Understanding Percentage Labelling Of Oleum",
+                      "uri": "https://content.allen.in/235dddb2-2157-4197-a267-ffb608175186/playlists/ALLEN/x264/master.m3u8?hdnts=exp=1776083316~acl=*235dddb2-2157-4197-a267-ffb608175186*~hmac=f9886a1cfb8893d20d735f8ec0c83b2533cd773ea4ea4b4efed831708e418949"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Understanding Percentage Labelling Of Oleum",
+                        "card_type": "Concept Videos - Content",
+                        "content_id": "235dddb2-2157-4197-a267-ffb608175186",
+                        "section_name": "Concept Videos",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "PLAY_VIDEO"
+                  },
+                  "content_title": "Understanding Percentage Labelling Of Oleum",
+                  "cta": null,
+                  "description": "Learn the concept of percentage labelling in oleum, how to calculate the amount of water added, and deduce the amount of resulting H2SO4.",
+                  "duration": "18:00",
+                  "image_data": {
+                    "name": "",
+                    "url": "https://thumbnail.allen.in/6c245ba2-60dc-4884-9e2f-93d5f4721025/original.webp"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "sequence": 41,
+                  "sub_topics": [
+                    "Percentage Labelling Of Oleum",
+                    "Mass Fraction"
+                  ],
+                  "type": "RECORDED_VIDEOS_CONTENT_TYPE"
+                }
+              ],
+              "title": "Concept Videos"
+            },
+            "root": {
+              "data": {
+                "alignment": null,
+                "children": [
+                  {
+                    "data": {
+                      "value": "LIST"
+                    }
+                  }
+                ],
+                "stack": "VERTICAL",
+                "style": {
+                  "background_color": {
+                    "name": "background_secondary"
+                  },
+                  "corner_radius": 20,
+                  "frame": {
+                    "width": "MAX"
+                  },
+                  "padding": {
+                    "top": 0
+                  }
+                },
+                "style_type": "CONTAINER"
+              },
+              "template_type": "CONTAINER",
+              "type": "CONTAINER"
+            },
+            "translation_folder": "",
+            "translation_key": "LIBRARY_VIDEOS_WEB",
+            "version": 6
+          },
+          "id": 57979,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "TWO1DL6MrN22mlKmWv_VN"
+            }
+          },
+          "type": "POLYMORPHIC_WIDGET"
+        },
+        {
+          "const_widget_id": "CM-b3kMs3-3Z3PnGKiNGX",
+          "data": {
+            "data": {
+              "cards": [
+                {
+                  "card_action": {
+                    "data": {
+                      "content": {
+                        "data": {
+                          "contents_list": [
+                            {
+                              "content_action": {
+                                "data": {
+                                  "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                                  "content_id": "8fc2a0f1-fde8-4255-a266-dfb09e3a171e",
+                                  "file_name": "",
+                                  "nodeID": "89",
+                                  "open_new_tab": "true",
+                                  "taxonomyID": "1739171216OJ",
+                                  "title": "Solutions RACE - Mole Concept",
+                                  "uri": "https://d2b4i7hu6z450i.cloudfront.net/8fc2a0f1-fde8-4255-a266-dfb09e3a171e/original.pdf?Expires=1776083316&Signature=gjJuKOngPqXO6o9Y4GyijJNcn0Ly3UW0S4Em3SKpnxeyVlKZ5ebl-fnwvlPnJ5rR76jQs-7eXA6Apg6rSiMSWQP8OyODghAzINpohs7YUtuFo1tHgnf8Pws3n8rZ6UzfaArTe2BuA~AkFtLRjBUtQETkahqy1bU5l5-teeZ1wtoXbwlPXJwR8H35yZNkURYG8-ZfsT49VFIaQZgMTwgMie~uFn7cERJFf~Pg8adWU4uuiWTqWRkF432D04El72Lxdy7UHxL9g1ZV4tbh9IPJYHp5ce-T6aSJ00j9GdXq3rQpfqvXYcgfHW~h3i2lpGWntS9IW3G1fmrDkGrEd6CNvA__&Key-Pair-Id=KZP0UJSOVFCEV"
+                                },
+                                "tracking_params": {
+                                  "current": {
+                                    "card_name": "Solutions RACE - Mole Concept",
+                                    "card_type": "Additional Materials - RACE & Solutions - Content",
+                                    "content_id": "8fc2a0f1-fde8-4255-a266-dfb09e3a171e",
+                                    "section_name": "Additional Materials-RACE & Solutions-BottomSheet",
+                                    "subject_id": "2",
+                                    "taxonomy_id": "1739171216OJ",
+                                    "topic_id": "89"
+                                  },
+                                  "event_type": "card_clicked"
+                                },
+                                "type": "OPEN_PDF"
+                              },
+                              "content_title": "Solutions RACE - Mole Concept",
+                              "cta": null,
+                              "description": "Solutions RACE - ",
+                              "image_data": {
+                                "name": "",
+                                "url": "IC_BOOK_OPEN"
+                              },
+                              "is_locked": false,
+                              "new": "",
+                              "type": "RACE_CONTENT_TYPE"
+                            },
+                            {
+                              "content_action": {
+                                "data": {
+                                  "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                                  "content_id": "db028e87-bf7d-4fd1-87de-e0ef5e561b9d",
+                                  "file_name": "",
+                                  "nodeID": "89",
+                                  "open_new_tab": "true",
+                                  "taxonomyID": "1739171216OJ",
+                                  "title": "Race - Mole Concept",
+                                  "uri": "https://d2b4i7hu6z450i.cloudfront.net/db028e87-bf7d-4fd1-87de-e0ef5e561b9d/original.pdf?Expires=1776083316&Signature=DZ8brNeFh36XMfXEIwul2-TWeI-YVadqGOjtV1lOW09TzhB7GBHhciPubaQ85km9~xEaqprFlrkif4EpIxVcNOEeDtRpvRT3l4h7DXYqaxNjz2iC5nIXD6wXadGUYXDT84FcKGc8LVKLouWbjURtTANCYJeo2gQrG6iWapFm4NlBGsLWbruz-0XAkL5lkVtR5Cfz3KvzlOr9N8Z7Sx762JmcYiDfOq8cVLWqxu0HIlJlkAIX-VoZaUVFKl3zVk5AE6d~ti~DfIQ4X-1uHuOwVLjJNTEuoRMyKNxUBiCK6Kt61RXhMcn~vQGOTasoVVp1Es9~yx2wdUuvIb1tQXOykA__&Key-Pair-Id=KZP0UJSOVFCEV"
+                                },
+                                "tracking_params": {
+                                  "current": {
+                                    "card_name": "Race - Mole Concept",
+                                    "card_type": "Additional Materials - RACE & Solutions - Content",
+                                    "content_id": "db028e87-bf7d-4fd1-87de-e0ef5e561b9d",
+                                    "section_name": "Additional Materials-RACE & Solutions-BottomSheet",
+                                    "subject_id": "2",
+                                    "taxonomy_id": "1739171216OJ",
+                                    "topic_id": "89"
+                                  },
+                                  "event_type": "card_clicked"
+                                },
+                                "type": "OPEN_PDF"
+                              },
+                              "content_title": "Race - Mole Concept",
+                              "cta": null,
+                              "description": "",
+                              "image_data": {
+                                "name": "",
+                                "url": "IC_BOOK_OPEN"
+                              },
+                              "is_locked": false,
+                              "new": "",
+                              "type": "RACE_CONTENT_TYPE"
+                            }
+                          ],
+                          "cta": null,
+                          "title": "RACE & Solutions"
+                        },
+                        "root": {
+                          "data": {
+                            "alignment": null,
+                            "children": [
+                              {
+                                "data": {
+                                  "value": "LIST"
+                                }
+                              }
+                            ],
+                            "stack": "VERTICAL",
+                            "style": {
+                              "background_color": {
+                                "name": "background_secondary"
+                              },
+                              "corner_radius": 20,
+                              "frame": {
+                                "width": 470
+                              }
+                            },
+                            "style_type": "CONTAINER"
+                          },
+                          "template_type": "CONTAINER",
+                          "type": "CONTAINER"
+                        },
+                        "translation_key": "LIBRARY_MATERIAL_LIST_POPUP_WEB",
+                        "version": 2
+                      },
+                      "is_retained": true,
+                      "name": "POLYMORPHIC_BOTTOM_SHEET"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "RACE & Solutions",
+                        "card_type": "Additional Materials - RACE & Solutions",
+                        "section_name": "Additional Materials",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "SHOW_POPUP"
+                  },
+                  "card_title": "RACE & Solutions",
+                  "cta": null,
+                  "imageData": {
+                    "name": "",
+                    "url": "IC_BOOK_OPEN"
+                  },
+                  "new": "",
+                  "subtitle": "2 PDFs"
+                },
+                {
+                  "card_action": {
+                    "data": {
+                      "content": {
+                        "data": {
+                          "contents_list": [
+                            {
+                              "content_action": {
+                                "data": {
+                                  "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                                  "content_id": "3c5f1d80-88dc-4e9a-bbb3-55e95c21acfe",
+                                  "file_name": "",
+                                  "nodeID": "89",
+                                  "open_new_tab": "true",
+                                  "taxonomyID": "1739171216OJ",
+                                  "title": "Solutions Exercise - Mole Concept",
+                                  "uri": "https://d2b4i7hu6z450i.cloudfront.net/3c5f1d80-88dc-4e9a-bbb3-55e95c21acfe/original.pdf?Expires=1776083316&Signature=AcW1b7zYReqyhryLajN~2fbKlNiZv41lYQpKEJvRjKzM0MtOtXwTPUyhh7uCzD-yzNddBGWGVX5yhOdo1gkSZ8k1h0RbOx2Q330gHMWPwtvzla-HVTtHly-0EJl3~JyHTCo8GFsGoNKD9BTze2EoSqlXZvTIzO-oalqAmPY6v2r2RLCTxXoHt6sui5PgBSDejpNU0B49NMbq7z05UYdT77LSwLoJDzzSi4H5PLM0ABazZLZL0rP5cI9YW1n7aIoZ3CHoA-6tr1KD8cnsWdI3OttTpMM3heRnKnODdMqCXT18r4q4jAMsTV0WRUTMtLJxfQ~LutZIieciNtZuK3uvEA__&Key-Pair-Id=KZP0UJSOVFCEV"
+                                },
+                                "tracking_params": {
+                                  "current": {
+                                    "card_name": "Solutions Exercise - Mole Concept",
+                                    "card_type": "Additional Materials - Exercises & Solutions - Content",
+                                    "content_id": "3c5f1d80-88dc-4e9a-bbb3-55e95c21acfe",
+                                    "section_name": "Additional Materials-Exercises & Solutions-BottomSheet",
+                                    "subject_id": "2",
+                                    "taxonomy_id": "1739171216OJ",
+                                    "topic_id": "89"
+                                  },
+                                  "event_type": "card_clicked"
+                                },
+                                "type": "OPEN_PDF"
+                              },
+                              "content_title": "Solutions Exercise - Mole Concept",
+                              "cta": null,
+                              "description": "",
+                              "image_data": {
+                                "name": "",
+                                "url": "IC_BOOK_OPEN"
+                              },
+                              "is_locked": false,
+                              "new": "",
+                              "type": "EXERCISE_CONTENT_TYPE"
+                            },
+                            {
+                              "content_action": {
+                                "data": {
+                                  "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                                  "content_id": "7d130d24-6f9d-42ff-ab05-b3fdb5f85f78",
+                                  "file_name": "",
+                                  "nodeID": "89",
+                                  "open_new_tab": "true",
+                                  "taxonomyID": "1739171216OJ",
+                                  "title": "Exercise - Mole Concept",
+                                  "uri": "https://d2b4i7hu6z450i.cloudfront.net/7d130d24-6f9d-42ff-ab05-b3fdb5f85f78/original.pdf?Expires=1776083316&Signature=LqT8HDZSCP4ekfr~8nYsB7UGZ1ZqE8mFsNwWEKxFFjxPvXUn0YTq29rlrKw9FjYHBH6dELtlO3y2OE1mQ0gE3-f8qGJ8a0im7nKuQVey8JU3X3AjaGzuQD8-MR8HWTqqLwwvDXwnfbD-eUzJVg-inyABJbZHQom5n86SdqXx16Dm0qgaDvRECRpi6jKQr0AuWN86Ey3wjGIwXBbQjU~-jhla31~~M~NZENaOnmcErGdwhALJo2In~rJIbidJYcELuY4pTfXfzkfV-M4FUIM0hhE6GLEdYJAfl5IpcM~1R8HDtrlVsiaDIKk27DmcCWXRw5-hv9i9y5t9EzHxaqMyeQ__&Key-Pair-Id=KZP0UJSOVFCEV"
+                                },
+                                "tracking_params": {
+                                  "current": {
+                                    "card_name": "Exercise - Mole Concept",
+                                    "card_type": "Additional Materials - Exercises & Solutions - Content",
+                                    "content_id": "7d130d24-6f9d-42ff-ab05-b3fdb5f85f78",
+                                    "section_name": "Additional Materials-Exercises & Solutions-BottomSheet",
+                                    "subject_id": "2",
+                                    "taxonomy_id": "1739171216OJ",
+                                    "topic_id": "89"
+                                  },
+                                  "event_type": "card_clicked"
+                                },
+                                "type": "OPEN_PDF"
+                              },
+                              "content_title": "Exercise - Mole Concept",
+                              "cta": null,
+                              "description": "",
+                              "image_data": {
+                                "name": "",
+                                "url": "IC_BOOK_OPEN"
+                              },
+                              "is_locked": false,
+                              "new": "",
+                              "type": "EXERCISE_CONTENT_TYPE"
+                            }
+                          ],
+                          "cta": null,
+                          "title": "Exercises & Solutions"
+                        },
+                        "root": {
+                          "data": {
+                            "alignment": null,
+                            "children": [
+                              {
+                                "data": {
+                                  "value": "LIST"
+                                }
+                              }
+                            ],
+                            "stack": "VERTICAL",
+                            "style": {
+                              "background_color": {
+                                "name": "background_secondary"
+                              },
+                              "corner_radius": 20,
+                              "frame": {
+                                "width": 470
+                              }
+                            },
+                            "style_type": "CONTAINER"
+                          },
+                          "template_type": "CONTAINER",
+                          "type": "CONTAINER"
+                        },
+                        "translation_key": "LIBRARY_MATERIAL_LIST_POPUP_WEB",
+                        "version": 2
+                      },
+                      "is_retained": true,
+                      "name": "POLYMORPHIC_BOTTOM_SHEET"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Exercises & Solutions",
+                        "card_type": "Additional Materials - Exercises & Solutions",
+                        "section_name": "Additional Materials",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "SHOW_POPUP"
+                  },
+                  "card_title": "Exercises & Solutions",
+                  "cta": null,
+                  "imageData": {
+                    "name": "",
+                    "url": "IC_BOOK_OPEN"
+                  },
+                  "new": "",
+                  "subtitle": "2 PDFs"
+                }
+              ],
+              "title": "Additional Materials"
+            },
+            "root": {
+              "data": {
+                "alignment": null,
+                "children": [
+                  {
+                    "data": {
+                      "value": "LIST"
+                    }
+                  }
+                ],
+                "stack": "VERTICAL",
+                "style": {
+                  "background_color": {
+                    "name": "background_secondary"
+                  },
+                  "corner_radius": 20,
+                  "frame": {
+                    "width": "MAX"
+                  }
+                },
+                "style_type": "CONTAINER"
+              },
+              "template_type": "CONTAINER",
+              "type": "CONTAINER"
+            },
+            "translation_folder": "",
+            "translation_key": "LIBRARY_ADDITIONAL_MATERIAL_WEB",
+            "version": 3
+          },
+          "id": 44381,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "CM-b3kMs3-3Z3PnGKiNGX"
+            }
+          },
+          "type": "POLYMORPHIC_WIDGET"
+        },
+        {
+          "const_widget_id": "Usx0CBS1K2zHPtSYmPyMJ",
+          "data": {
+            "data": {
+              "card": {
+                "cta": {
+                  "action": {
+                    "data": {
+                      "loader_config": {
+                        "timeout_in_ms": 5000
+                      },
+                      "query": {
+                        "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                        "node_id": "89",
+                        "taxonomy_id": "1739171216OJ"
+                      },
+                      "state": "REFRESHABLE",
+                      "type": "webview",
+                      "uri": "/content-platform/flash-cards"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "button_name": "Start Flashcards",
+                        "current_screen_section": "Flashcards",
+                        "no_of_cards": "80",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "button_clicked"
+                    },
+                    "type": "NAVIGATION"
+                  },
+                  "fullWidth": false,
+                  "image_data": {
+                    "url": ""
+                  },
+                  "label": "Start Flashcards"
+                },
+                "number_of_topics_remaining": "",
+                "progress": 0,
+                "subtitle": "",
+                "title": ""
+              },
+              "image_data": {
+                "name": "",
+                "url": "https://res.cloudinary.com/dpzpn3dkw/image/upload/w_400,f_auto,q_auto/v1732867757/dvs150fwueqnzxywp1n9.svg?_upload_ref=ic_img_tool"
+              },
+              "sub_title": "4 Decks of cards",
+              "title": "Flashcards"
+            },
+            "root": {
+              "data": {
+                "alignment": null,
+                "children": [
+                  {
+                    "data": {
+                      "value": "LIST"
+                    }
+                  }
+                ],
+                "stack": "VERTICAL",
+                "style": {
+                  "frame": {
+                    "width": "MAX"
+                  }
+                },
+                "style_type": "CONTAINER"
+              },
+              "template_type": "CONTAINER",
+              "type": "CONTAINER"
+            },
+            "translation_folder": "",
+            "translation_key": "LIBRARY_FLASHCARDS_CONTAINER_B1_WEB",
+            "version": 0
+          },
+          "id": 44389,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "Usx0CBS1K2zHPtSYmPyMJ"
+            }
+          },
+          "type": "POLYMORPHIC_WIDGET"
+        },
+        {
+          "const_widget_id": "bLF1YJItS4hHeBv8zpvuN",
+          "data": {
+            "data": {
+              "contents_list": [
+                {
+                  "content_action": {
+                    "data": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "content_id": "9795870f-9100-4c99-876e-9b39830239f2",
+                      "file_name": "",
+                      "nodeID": "89",
+                      "open_new_tab": "true",
+                      "taxonomyID": "1739171216OJ",
+                      "title": "Mole Concept",
+                      "uri": "https://d2b4i7hu6z450i.cloudfront.net/9795870f-9100-4c99-876e-9b39830239f2/original.pdf?Expires=1776083316&Signature=BZzNbZmi09x9roZclFtveyM0alOkwRD2rek9ZRKJlFiI0rY5-C5V2N88WhQcTtlqAUTgChjHXC3A0AZYEjg3oVwQZVI6kF0X1Xo9qlJN7TTtgzdLgHv~OwgPtYdcWrn2hEpJffkRlc3Q3l~P9KZGSJbN88PvcmYeomuojOf03IkeczF8JFUpAKf5ocqvFh3e39CKhJ6UtpAucikngAuEc3-HMe5RbDTI0i6Wl1qUXMHecH6dottOwy4WJhYxxpqvymk40KaMporTizgaCsxZU-LUlaRahcocMBYPueE0NOTcYgdg06I48lKpuRDMZuZmyYh04cP83zJtJwdYbA6YBQ__&Key-Pair-Id=KZP0UJSOVFCEV"
+                    },
+                    "tracking_params": {
+                      "current": {
+                        "card_name": "Mole Concept",
+                        "card_type": "Study Modules - Content",
+                        "content_id": "9795870f-9100-4c99-876e-9b39830239f2",
+                        "section_name": "Study Modules",
+                        "subject_id": "2",
+                        "taxonomy_id": "1739171216OJ",
+                        "topic_id": "89"
+                      },
+                      "event_type": "card_clicked"
+                    },
+                    "type": "OPEN_PDF"
+                  },
+                  "content_title": "Mole Concept",
+                  "cta": null,
+                  "description": "",
+                  "image_data": {
+                    "name": "",
+                    "url": "IC_BOOK_OPEN"
+                  },
+                  "is_locked": false,
+                  "new": "",
+                  "type": "STUDY_MODULE_CONTENT_TYPE"
+                }
+              ],
+              "title": "Study Modules"
+            },
+            "root": {
+              "data": {
+                "alignment": null,
+                "children": [
+                  {
+                    "data": {
+                      "value": "LIST"
+                    }
+                  }
+                ],
+                "stack": "VERTICAL",
+                "style": {
+                  "background_color": {
+                    "name": "background_secondary"
+                  },
+                  "corner_radius": 20,
+                  "frame": {
+                    "width": "MAX"
+                  }
+                },
+                "style_type": "CONTAINER"
+              },
+              "template_type": "CONTAINER",
+              "type": "CONTAINER"
+            },
+            "translation_folder": "",
+            "translation_key": "LIBRARY_STUDY_MODULES_WEB",
+            "version": 3
+          },
+          "id": 50054,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "bLF1YJItS4hHeBv8zpvuN"
+            }
+          },
+          "type": "POLYMORPHIC_WIDGET"
+        },
+        {
+          "const_widget_id": "-s8w5lhAckiewxHbfhbCZ",
+          "data": {
+            "data": {
+              "cta": {
+                "action": {
+                  "data": {
+                    "loader_config": {
+                      "timeout_in_ms": 5000
+                    },
+                    "query": {
+                      "batch_id": "bt_dGHnem4IjNtEOVQjfmW26",
+                      "node_id": "89",
+                      "taxonomy_id": "1739171216OJ"
+                    },
+                    "state": "REFRESHABLE",
+                    "type": "webview",
+                    "uri": "/content-platform/revision-notes"
+                  },
+                  "tracking_params": {
+                    "current": {
+                      "button_name": "Open Revision Notes",
+                      "current_screen_section": "Revision Notes",
+                      "taxonomy_id": "1739171216OJ",
+                      "topic_id": "89"
+                    },
+                    "event_type": "button_clicked"
+                  },
+                  "type": "NAVIGATION"
+                },
+                "fullWidth": false,
+                "icon_uri": "RIGHT_ARROW",
+                "image_data": {
+                  "url": ""
+                },
+                "label": "Open Revision Notes"
+              },
+              "image_data": {
+                "name": "",
+                "url": "https://res.cloudinary.com/dpzpn3dkw/image/upload/w_400,f_auto,q_auto/v1736763688/hgmiflgm0jjfsehjh0eh.svg?_upload_ref=ic_img_tool&__ar__=1.05"
+              },
+              "sub_title": "39 min read",
+              "title": "Revision Notes"
+            },
+            "root": {
+              "data": {
+                "alignment": null,
+                "children": [
+                  {
+                    "data": {
+                      "value": "LIST"
+                    }
+                  }
+                ],
+                "stack": "VERTICAL",
+                "style": {
+                  "background_color": {
+                    "hex_code": "",
+                    "name": "background_secondary"
+                  },
+                  "corner_radius": 20,
+                  "frame": {
+                    "width": "MAX"
+                  }
+                },
+                "style_type": "CONTAINER"
+              },
+              "template_type": "CONTAINER",
+              "type": "CONTAINER"
+            },
+            "translation_folder": "",
+            "translation_key": "LIBRARY_REVISION_NOTES_WEB",
+            "version": 5
+          },
+          "id": 44747,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "-s8w5lhAckiewxHbfhbCZ"
+            }
+          },
+          "type": "POLYMORPHIC_WIDGET"
+        },
+        {
+          "const_widget_id": "K4Egfg7c9lu37tfkwUIFz",
+          "data": {
+            "widget": {
+              "data": {
+                "alignment": "TOP",
+                "children": [],
+                "stack": "HORIZONTAL",
+                "style": {
+                  "background_color": {
+                    "name": "background_primary"
+                  },
+                  "frame": {
+                    "width": "MAX"
+                  },
+                  "margin": {
+                    "top": 40
+                  }
+                }
+              },
+              "type": "CONTAINER"
+            }
+          },
+          "id": 30877,
+          "layout_params": null,
+          "tracking_params": {
+            "impression": {
+              "const_widget_id": "K4Egfg7c9lu37tfkwUIFz"
+            }
+          },
+          "type": "POLYMORPHIC_WIDGET"
+        }
+      ]
+    },
+    "page_info": {
+      "data": {
+        "contains_html_content": false,
+        "description": "",
+        "title": "Topic Content"
+      },
+      "id": "28042",
+      "layout_params": {
+        "background_color": "#FAF0E6",
+        "page_layout": [
+          {
+            "data": {
+              "widgetId": "RPtQ_o2sb5qrh9q6Opva7"
+            },
+            "id": "1",
+            "ratio": 1,
+            "type": "widget"
+          },
+          {
+            "data": {
+              "widgetId": "FtjVCfMgCkC9iQKpsMMz_"
+            },
+            "id": "2",
+            "ratio": 1,
+            "type": "widget"
+          },
+          {
+            "columns": [
+              {
+                "data": {
+                  "widgetId": "R0WgofXG7MUNYtGABaXgG"
+                },
+                "id": "5",
+                "ratio": 1,
+                "type": "widget"
+              },
+              {
+                "data": {
+                  "widgetId": "MgnSbzM6EZCKadsfNZG5I"
+                },
+                "id": "7",
+                "ratio": 1,
+                "type": "widget"
+              },
+              {
+                "data": {
+                  "widgetId": "TWO1DL6MrN22mlKmWv_VN"
+                },
+                "id": "8",
+                "ratio": 1,
+                "type": "widget"
+              },
+              {
+                "data": {
+                  "widgetId": "CM-b3kMs3-3Z3PnGKiNGX"
+                },
+                "id": "9",
+                "ratio": 1,
+                "type": "widget"
+              },
+              {
+                "data": {
+                  "widgetId": "ozoiC5YD3PWOnXR3OHyoj"
+                },
+                "id": "10",
+                "ratio": 1,
+                "type": "widget"
+              },
+              {
+                "data": {
+                  "widgetId": "Usx0CBS1K2zHPtSYmPyMJ"
+                },
+                "id": "11",
+                "ratio": 1,
+                "type": "widget"
+              },
+              {
+                "data": {
+                  "widgetId": "bLF1YJItS4hHeBv8zpvuN"
+                },
+                "id": "12",
+                "ratio": 1,
+                "type": "widget"
+              },
+              {
+                "data": {
+                  "widgetId": "jruGCdS2mGKsfBNMLHfcJ"
+                },
+                "id": "13",
+                "ratio": 1,
+                "type": "widget"
+              },
+              {
+                "data": {
+                  "widgetId": "-s8w5lhAckiewxHbfhbCZ"
+                },
+                "id": "14",
+                "ratio": 1,
+                "type": "widget"
+              }
+            ],
+            "container_style": {
+              "container_type": "no-py-container",
+              "is_no_gap": true
+            },
+            "grid_config": {
+              "horizontal_gap": 24,
+              "no_of_columns": 2,
+              "vertical_gap": 24
+            },
+            "horizontal": false,
+            "id": "4",
+            "is_grid": true,
+            "ratio": 1,
+            "type": "section"
+          },
+          {
+            "data": {
+              "widgetId": "K4Egfg7c9lu37tfkwUIFz"
+            },
+            "id": "15",
+            "ratio": 1,
+            "type": "widget"
+          }
+        ],
+        "usePageLayout": true
+      },
+      "name": "Topic Content",
+      "page_id": "hvtpDmBOGp3G5xcp9VPUJ",
+      "page_meta": {
+        "floating_meta": {
+          "arrangement": "SPACE_BETWEEN",
+          "stack": "HORIZONTAL"
+        },
+        "tab_meta": {},
+        "type": "LIST",
+        "url": "",
+        "url_category": "CONTENT_PAGES"
+      },
+      "seo_data": {
+        "seo_desc": "",
+        "tags": []
+      },
+      "tracking_params": {}
+    },
+    "ttl": 0
+  }
+}
